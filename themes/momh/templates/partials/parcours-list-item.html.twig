@@ -1,0 +1,13 @@
+{% for item in collection if item.id != cvid %}
+    <{{ hlevel }}> <a href="{{ item.url }}">{{ item.title }}</a></{{ hlevel}}>
+    {% if hlevel == "h2" %}
+        {{ item.summary|striptags }}
+    {% else %}
+        {% for grandchild in item.children %}
+        	<dl>
+            <dt><a href="{{ grandchild.url }}">{{ grandchild.title }}</a></dt>
+            <dd>{{ grandchild.summary|striptags }}</dd>
+          </dl>
+        {% endfor %}
+    {% endif %}     
+{% endfor %}

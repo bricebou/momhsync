@@ -1,0 +1,78 @@
+{% set latlngs = [] %}
+{% for im in page.media.images %}
+  {% set image = page.media.images|slice(loop.index0,1)|first %}
+  {% set exif = exif(image.filepath, true) %}
+  {# {{ dump(exif) }} #}
+  {% if exif.GPSLatitude and exif.GPSLongitude %}
+    {% set lat1 = exif.GPSLatitude[0]|split('/')[0] %}
+    {% set lat2 = exif.GPSLatitude[1]|split('/')[0] %}
+    {% set lat3 = exif.GPSLatitude[2]|split('/')[0] %}
+
+    {% set lon1 = exif.GPSLongitude[0]|split('/')[0] %}
+    {% set lon2 = exif.GPSLongitude[1]|split('/')[0] %}
+    {% set lon3 = exif.GPSLongitude[2]|split('/')[0] %}
+    
+    {# DMS - Degrees Minutes Seconds - to DD - Decimal Degrees #}
+    {% if exif.GPSLongitude[1]|split('/')[1] == 1 %}
+      {% set lat = lat1 + (((lat2 * 60) + (lat3 / 100)) / 3600) %}
+      {% set lon = lon1 + (((lon2 * 60) + (lon3 / 100)) / 3600) %}
+    {% else %}
+      {# DDS - Decimal Degrees Minutes - to DD - Decimal Degrees #}
+      {% if exif.GPSLongitude[1]|split('/')[1] == 1000000 %}{% endif %}
+        {% set lat = lat1 + ((lat2 / 1000000) / 60) %}
+        {% set lon = lon1 + ((lon2 / 1000000) / 60) %}
+    {% endif %}
+   
+    {% if exif.GPSLongitudeRef == "W" %}
+      {% set lon = -lon %}
+    {% endif %}
+    
+    {% if exif.GPSLatitudeRef|first == "S" %}
+      {% set lat = -lat %}
+    {% endif %}
+    {% set latlngs = latlngs|merge([[lat,lon]]) %}
+  {% endif %} 
+{% endfor %}
+
+{% if latlngs %}
+  
+  <div class="instamap" id="instamap{{ page.id }}" style="height: 18rem; width: 100%"></div>
+
+  <script>
+    var OpenStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 20,
+      attribution: '&copy; Openstreetmap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+    var OpenStreetMap_France = L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+      maxZoom: 20,
+      attribution: '&copy; Openstreetmap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+
+    var map{{ page.id }} = L.map('instamap{{ page.id }}', {
+      layers: [OpenStreetMap],
+      fullscreenControl: true,
+    }).setView([{{ latlngs[0][0] }}, {{ latlngs[0][1] }}], 13);
+
+    var baseMaps = {
+      "OpenStreetMap": OpenStreetMap,
+      "OpenStreetMap France": OpenStreetMap_France,
+      "Esri Satellite": Esri_WorldImagery
+    };
+
+    L.control.layers(baseMaps).addTo(map{{ page.id }});
+
+    // Un seul point affiché sur la carte,
+    // correspondant aux premières coordonnées GPS trouvées
+    // var marker = L.marker([{{ latlngs[0][0] }}, {{ latlngs[0][1]  }}]).addTo(map{{ page.id }});
+
+    // Tous les points possibles, si les photos ont les métadonnées
+    var coord = {{ latlngs|json_encode }};
+    for (i = 0; i < coord.length; i++) {
+      var marker = L.marker([coord[i][0], coord[i][1]]).addTo(map{{ page.id }});
+    };
+    
+  </script>
+{% endif %}

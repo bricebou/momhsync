@@ -1,0 +1,159 @@
+name: Momh
+version: 0.1.0
+description: momh is the template I use for My Own Memory Hole, my own personnal website.
+icon: rebel
+author:
+  name: Brice Boucard
+  email: brice.boucard@gmail.com
+homepage: https://github.com/bricebou/grav-theme-momh-grav
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/bricebou/grav-theme-momh-grav/issues
+readme: https://github.com/bricebou/grav-theme-momh-grav/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+
+    grid-size:
+      type: select
+      label: Grid size
+      help: The maximum width of the theme
+      size: small
+      options:
+        '': None (full width)
+        grid-xl: Extra Large
+        grid-lg: Large
+        grid-md: Medium
+
+    sticky-footer:
+      type: toggle
+      label: Sticky footer
+      help: When enabled, the footer will be sticky at the bottom of the browser
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    header_section:
+      type: section
+      title: Header options
+      underline: true
+
+    header-font-align:
+      type: text
+      label: Site title formating
+      markdown: true
+      description: 'There are several options that can be listed here (space separated):<br />"fleft" "fcenter" "fright" "text-lowercase" "text-uppercase" "text-bold" "text-italic" "text-weight-light" ' 
+      default: 'fcenter text-lowercase text-italic text-weight-light'
+      size: medium
+
+    header-fitted:
+      type: toggle
+      label: FitText Header
+      description: jQuery free ! FitText (https://github.com/adactio/FitText.js) makes font-sizes flexible.
+      help: FitText script applied on the site title?
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    
+    header-fitted-min-width:
+      type: text
+      size: x-small
+      label: Window min-width
+      help: FitText is trigerred only when the width of the window is...
+      description: 'Spectre CSS breakpoints are : xs=480, sm=600, md=840, lg=960, xl=1280'
+      validate:
+          type: int
+          min: 480
+          max: 1280
+          default: 600    
+
+    header-fitted-max:
+      type: text
+      size: x-small
+      label: FitText Header Max Size
+      help: The size FitText uses as maximum font size when applied to the site title
+      validate:
+          type: int
+          min: 1
+          max: 120
+          default: 60
+    
+    navbar_section:
+      type: section
+      title: Navbar options
+      underline: true
+
+    navbar-align:
+      type: text
+      label: Navbar Position
+      description: 'Only one these three : "fleft" "fcenter" "fright"' 
+      default: 'fcenter'
+      # placeholder: '/blog'
+      size: medium
+
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        description: non-jQuery solution, only CSS, thanks to Deliver theme.
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
+
+    spectre_section:
+      type: section
+      title: Spectre.css Options
+      underline: true
+
+    spectre.icons:
+      type: toggle
+      label: Icons CSS
+      description: '"Single Element Pure CSS icons"<br />Icon CSS (https://picturepan2.github.io/icons.css/) is now independent from Spectre CSS (https://picturepan2.github.io/spectre/)...'
+      help: When enabled, the `spectre-icons.css` file will be included
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    spectre.links:
+      type: toggle
+      label: External Links Icon
+      help: When enabled, the "link" icon of Icon CSS will be added to all external links within main content block and footer.
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    spectre.links-footer:
+      type: toggle
+      label: Footer External Links Icons
+      help: Add the "link" icon of Icon CSS inside the footer ?
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool

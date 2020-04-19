@@ -1,0 +1,21 @@
+<div class="columns">
+    <div class="column col-4 col-sm-12 published-metadata">
+        <p class="taxonomy taxonomy-category">
+            {% include 'partials/blog/taxonomy.html.twig' with {'taxon': 'category', 'base_url': '/blog', 'label_style': 'taxonomy_folder' } %}
+        </p>
+
+        {% if not (page.url starts with '/parcours') %}
+            <p class="published-date">
+                <span class="published-text">publié le</span> 
+                {% include 'partials/blog/date.html.twig' %}
+            </p>
+        {% endif %}
+        <p class="taxonomy taxonomy-tags">
+            {% include 'partials/blog/taxonomy.html.twig' with {'taxon': 'tag', 'base_url': '/blog' } %}
+        </p>
+    </div>
+    <div class="column col-8 col-sm-12 extlinkson bglinkson">
+        {# {{ page.summary }} #}
+        {{ page.content }}
+    </div>
+</div>

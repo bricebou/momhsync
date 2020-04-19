@@ -1,0 +1,20 @@
+{# <span class="blog-date">
+    <time class="dt-published" datetime="{{ page.date|date("c") }}">
+    	{% if page.dateformat %}
+    		<i class="icon icon-time"></i> {{ page.date|date(page.dateformat) }}
+    	{% else %}
+    		<i class="icon icon-time"></i> {{ page.date|localizeddate('long', 'none', grav.language.getLanguage) }}
+    	{% endif %}
+        
+    </time>
+</span> #}
+
+<span class="date">
+    <time class="dt-published" datetime="{{ page.date|date("c") }}">
+    	{% if page.dateformat %}
+    		{{ page.date|date(page.dateformat) }}
+    	{% else %}
+    		{{ page.date|localizeddate('long', 'none', grav.language.getLanguage) }}
+    	{% endif %}
+    </time>
+</span>

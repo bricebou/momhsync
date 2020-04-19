@@ -1,0 +1,733 @@
+\documentclass[oneside, onecolumn, a4paper, titlepage, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,francais]{babel}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{ted}[2008/02/12] % attention !
+\usepackage{textcomp}
+\usepackage{fixltx2e}
+\usepackage{xspace, calc, trace}
+
+
+\newcommand{\cut}{\selectlanguage{english}\ldots\selectlanguage{francais}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%Décompte automatique mots de la transcription%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+
+% Registres, booléens et marqueurs.
+
+\newtoks\PT@table   % le corps du tableau
+\newtoks\PT@data    % les données : nb de mots par ligne + locuteur
+\newif\ifPT@four@   % ajouter une quatrième colonne ?
+\newcount\PT@count  % pour les stats
+\newcommand\EndProcessTable{%
+  \PT@EndProcessTable}
+
+% Manipulation des registres.
+
+\newcommand\PT@table@add[1]{% 
+  \PT@table\expandafter{\the\PT@table#1}}
+
+\newcommand\PT@data@add[1]{%
+  \PT@data\expandafter{\the\PT@data#1}}
+
+% Décompte des mots (via les espaces) à proprement parler.
+
+\edef\PT@twospaces{\space\space}  % deux lexèmes espace
+
+\shorthandon{;:?!} % pour avoir les même \catcode que dans le document
+\newcommand\PT@count@words{%
+  % on commence par éliminer les trucs qui font foirer la supposition
+  % de base que (nb mots = nb espaces + 1)...
+  \Substitute*[\def\PT@temp]{\PT@temp}{ ;}{}%
+  \Substitute*[\def\PT@temp]{\PT@temp}{ :}{}%
+  \Substitute*[\def\PT@temp]{\PT@temp}{ ?}{}%
+  \Substitute*[\def\PT@temp]{\PT@temp}{ !}{}%
+  % la ligne suivante compte les espaces restants
+  \Substitute*{\PT@temp}{ }{}%
+  \advance\ted@count\@ne} % mots = espaces + 1
+\shorthandoff{;:?!} % plus besoin des \catcode spéciaux
+
+% La macro précedente suppose qu'il n'y a d'espace ni au début ni à la fin :
+% c'est potentiellement faux, il faut donc s'en assurer auparavant.
+
+\newcommand\PT@strip@spaces{% % prépare le terrain pour \PT@strip@
+  \expandafter\expandafter\expandafter\PT@strip
+  \expandafter\PT@temp\expandafter\@nil\space\@nil\@nill}
+
+\newcommand\PT@strip[1]{% % enlève les éventuels espaces initiaux
+  \PT@strip@#1}
+
+\@ifdefinable\PT@strip@\relax
+\def\PT@strip@#1 \@nil#2\@nill{% % enlève les éventuels espaces finaux
+  \ifx#2\empty\empty 
+    \PT@strip@@#1%
+  \else
+    \def\PT@temp{#1}%
+  \fi}
+
+\@ifdefinable\PT@strip@@\relax
+\def\PT@strip@@#1\@nil{%
+  \def\PT@temp{#1}}
+
+% Nettoyage : on enlève les commandes de « commentaires » et leurs arguments.
+% Utilise un \xdef protégé, ce qui suppose que tout est robuste...
+
+% nettoyage proprement dit
+\newcommand*\PT@cleanup[1]{%
+  \begingroup \PT@do@comments
+  \protected@xdef\PT@temp{#1}%
+  \endgroup
+  % on pourrait avoir 2 espaces de suite suite à supression de commande
+  \Substitute**[\def\PT@temp]{\PT@temp}{\PT@twospaces}{\empty}% 
+  \PT@strip@spaces}
+
+% initialisation (cf plus bas pour les réglages)
+\newcommand\PT@do@comments{}
+
+% Boucle de traitement principale. 
+
+\newcommand\ProcessTable{%
+  \PT@table{}%
+  \PT@data{}%
+  \PT@cell@one}
+
+% traitement de la première cellule : il y a pas mal de cas à détecter
+\newcommand\PT@cell@one[1]{%
+  \let\PT@next\PT@nextline
+  \ifcat\noexpand#1\relax % détecte les séquences de contrôle
+    \ifx#1\EndProcessTable % regarde si on a fini
+      \let\PT@next\PT@finish
+    \else
+      \PT@if@interline{#1}{\let\PT@next\PT@gobble@interln}%
+    \fi
+  \else
+    \ifnum`#1<58 % truc moche pour voir si #1 est un chiffre
+      \ifnum`#1>47
+        \let\PT@next\PT@cell@one@
+      \fi
+    \fi
+  \fi
+  \PT@next#1}
+
+% détection des inter-lignes comme \midrule (liste dans \PT@interliners)
+\newcommand\PT@if@interline[2]{% % pour l'instant
+  \def\PT@temp##1#1##2\@nil{%
+    \ifx\empty##2\empty \else #2\fi}%
+  \expandafter\PT@temp\PT@interliners#1\@nil}
+
+% initialisation (réglage voir plus bas)
+\newcommand\PT@interliners{}
+
+% traitement des inter-lignes
+\newcommand\PT@gobble@interln[1]{%
+  \PT@table@add{#1}%
+  \PT@cell@one}
+
+% lignes ne commençant pas par un chiffre : on passe
+\def\PT@nextline#1\tabularnewline{%
+  \PT@table@add{#1\tabularnewline}%
+  \PT@cell@one}
+
+% lignes à traiter, cellule par cellule
+\def\PT@cell@one@#1&{% 
+  \PT@table@add{#1&}%
+  \PT@data@add{\PT@line{#1}}%
+  \PT@cell@two}
+
+% cellule deux : on assainit les espaces avant d'enregistrer le nom
+\def\PT@cell@two#1&{%
+  \PT@table@add{#1&}%
+  \def\PT@temp{#1}\PT@strip@spaces
+  \expandafter\PT@data@add\expandafter{\expandafter{\PT@temp}}%
+  \PT@cell@three}
+
+% traitement de la dernière cellule et bouclage
+\def\PT@cell@three#1\tabularnewline{%
+  \PT@table@add{#1}%
+  \PT@cleanup{#1}\PT@count@words
+  \expandafter\PT@data@add\expandafter{\expandafter{\the\ted@count}}%
+  \ifPT@four@
+    \expandafter\PT@table@add\expandafter{\expandafter&\the\ted@count}%
+  \fi
+  \PT@table@add{\tabularnewline}%
+  \PT@cell@one}
+
+% en fin de boucle, avaler le délimiteur de fin
+\def\PT@finish\EndProcessTable{}
+
+% Récupération des données par l'utilisateur.
+
+% composer le tableau obtenu
+\newcommand\PrintTable{%
+  \def\PT@next{\begin{TableEnv}}%
+    \expandafter\PT@next\the\PT@table
+  \end{TableEnv}}
+
+% macro utilisateur : ajuste les bornes (< \to \leq) avant tout
+\newcommand\GetStats[2]{%
+  \edef\PT@temp{\noexpand\PT@get@stats{%
+      \number\numexpr#1-1\relax}{\number\numexpr#2+1\relax}}%
+  \PT@temp}
+
+% chope vraiment les stats
+\newcommand\PT@get@stats[3]{%
+  \def\PT@name{#3}%
+  \PT@count\z@
+  \let\PT@line\PT@line@check
+  \def\PT@line@##1##2##3{%
+    \ifnum##1>#1
+      \ifnum##1<#2
+        \def\PT@temp{##2}%
+        \ifx\PT@temp\PT@name
+          \advance\PT@count##3\relax
+        \fi
+      \fi
+    \fi}%
+  \the\PT@data
+  \the\PT@count}
+
+% faire gaffe aux éventuels numéros comme 30b
+\newcommand\PT@line@check[1]{%
+  \PT@line@checkb#1b\@nil}
+
+\def\PT@line@checkb#1b#2\@nil{%
+  \PT@line@{#1}}
+
+% Macros de gestion pour l'utilisateur
+
+% ajout de « commentaires »
+\newcommand*\PTAddComment[2]{%
+  \ifcase#2
+    \g@addto@macro\PT@do@comments{\let#1\empty}%
+  \or
+    \g@addto@macro\PT@do@comments{\let#1\@gobble}%
+  \or
+    \g@addto@macro\PT@do@comments{\let#1\@gobbletwo}%
+  \or
+    \g@addto@macro\PT@do@comments{\let#1\@gobblethree}%
+  \or
+    \g@addto@macro\PT@do@comments{\let#1\@gobblefour}%
+  \fi}
+
+% choix du traitement
+\newcommand\PTNoFourthColumn{%
+  \def\PTColumns{3}\PT@four@false}
+\newcommand\PTFourthColumn{%
+  \def\PTColumns{4}\PT@four@true}
+\PTFourthColumn % par défaut
+
+% ajout de macros inter-lignes
+\newcommand*\PTAddInterLiners{%
+  \g@addto@macro\PT@interliners}
+
+\makeatother
+
+% 
+% Partie utilisateur. Son job consiste à :
+% - définir l'environnement TableEnv pour le tableau final ;
+% - signaler ses macros de « commentaires » à ignorer ;
+% - s'assurer que ses autres macros soient robustes ou protégées ;
+% - signaler les trucs entre les lignes (\midrule, etc) ;
+% - choisir si une quatrième colonne est ajoutée (oui par défaut).
+% 
+
+\newlength\coli \newlength\colii \newlength\coliii
+\settowidth\coli{\ttfamily 000b}
+\settowidth\colii{\slshape (Procureur)}
+\setlength\coliii{\textwidth - 2\coli - \colii - 3\arraycolsep - 33pt}
+
+\newcolumntype{y}{>{\ttfamily\raggedleft}p{\coli}}
+\newcolumntype{x}{>{\slshape}p{\colii}}
+\newcolumntype{z}{>{\rmfamily\footnotesize\raggedleft}m{\coli}}
+
+% c'est là-dedans que sera composé le tableau une fois traité
+\newenvironment{TableEnv}{% 
+  \par\noindent
+  \begin{longtable}{yxp{\coliii}z}%
+    }{%
+  \end{longtable}}
+
+% doit être cohérent avec le choix ci-dessous...
+% \PTNoFourthColumn
+
+\newcommand\comm{\MakeUppercase}
+
+% les commandes dont le contenu est à ignorer, et leur nb d'arguments
+\PTAddComment{\emph}{1}
+\PTAddComment{\comm}{1}
+\PTAddComment{\footnote}{1}
+\PTAddComment{\footnotemark}{1}
+% nécéssite fixltx2e
+\MakeRobust\underline
+
+% trucs entre les lignes
+\PTAddInterLiners{\toprule\midrule\bottomrule}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Fin Décompte automatique mots %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% TRANSCRIPTION %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProcessTable
+\tabularnewline \toprule
+& Locuteur & Texte / \emph{Gestualité} \tabularnewline
+\midrule \endfirsthead
+\tabularnewline
+\multicolumn{3}{c}{\large\scshape{Audience}} \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Prévenu}}  \tabularnewline
+\tabularnewline
+1 & Prévenu & bonjour madame la juge \emph{Prév ajuste le micro ;
+  hochement vertical de la tête
+  ("ratification" de l'interlocuteur, marque de respect)} \tabularnewline
+2 & Présidente & \underline{monsieur vous avez un avocat}
+\tabularnewline
+3 & Prévenu & \underline{tous mes respects} \emph{Prév se tourne
+  ensuite vers le Procureur} \tabularnewline
+4 & Présidente & vous avez un avocat monsieur \tabularnewline
+5 & Prévenu & oui madame euh maître Moreau\footnotemark[1] \emph{Prév se retourne
+  (pour chercher son avocat)} \tabularnewline
+6 & Présidente & oui alors on va: \tabularnewline
+7 & Prévenu & tous mes respects \emph{Prév à l'intention
+  du Procureur vers laquelle il est tourné} \tabularnewline
+8 & Présidente & on va alors en attendant votre avocat je vérifie
+votre identité votre avocat arrive c'est parfait \emph{Prév regarde
+  vers le Procureur, l'air inquiet, préoccupé, la bouche
+  faisant un rictus (lèvre droite tirée vers le haut)} \tabularnewline
+9 & Prévenu & ok \emph{Prév approuve de la tête} \tabularnewline
+10 & Avocat & \comm{PEU AUDIBLE} excusez-moi \comm{PA} \tabularnewline
+11 & Présidente & vous vous appelez Tabar Fabien \tabularnewline
+12 & Prévenu & Oui \tabularnewline
+13 & Présidente & vous êtes né le douze \underline{décembre mille
+  neuf
+  cent} \tabularnewline
+14 & Prévenu & \underline{le douze douze} soixante-six à Paris dans
+le \underline{dixième arrondissement} \emph{Prév se penche sur le
+  micro tout en balançant la tête d'avant en
+  arrière, scandant ainsi ses propos} \tabularnewline
+15 & Présidente & \underline{soixante-six à Paris} dans le dixième
+\comm{(..)} vous habitez quinze voie d'Ivry dans le treizième
+\tabularnewline
+16 & Prévenu & appartement vingt et un trente-six \tabularnewline
+17 & Présidente & c'est toujours le cas \tabularnewline
+18 & Prévenu & dixième étage \tabularnewline
+19 & Présidente & d'accord \tabularnewline
+20 & Prévenu & dans le quartier \underline{asiatique} voilà
+\underline{exactement}
+\tabularnewline
+21 & Présidente & \underline{d'accord} \underline{à partir} de
+maintenant vous allez me laisser parler je vous donnerai la parole
+tout à l'\underline{heure} \tabularnewline
+22 & Prévenu & \underline{bien} ok \emph{(quitte la barre)}
+\tabularnewline
+23 & Avocat & \underline{vous restez là vous restez à la barre
+  monsieur} \tabularnewline
+24 & Prévenu & \underline{ah ok} \tabularnewline
+25 & Présidente & \underline{les faits qui vous sont reprochés} \comm{(1s)}
+votre casier judiciaire ne mentionne aucune condamnation les faits
+qui vous sont reprochés sont les  suivants : d'avoir à Paris le six
+février deux mille deux porté hors de votre domicile une ou plusieurs
+armes de la sixième catégorie en l'espèce: une carabine calibre douze
+à un coup et neuf cartouches \emph{(inspiration prononcée)} heu dans
+quelles conditions avez-vous été mis en cause euh: vous êtes allé
+dans le restaurant mac donald puis vous êtes allé au café des sports
+vous avez acheté des cigarettes vous vous êtes promené boulevard
+Masséna et vous dites que euh devant la tour Daumier ou à l'extérieur
+de la Tour Daumier vous avez trouvé une carabine et six cartouches
+dans les poubelles \tabularnewline
+26 & Prévenu & \comm{FORT} j'ai men\underline{ti (main-)} \comm{F} \tabularnewline
+27 & Présidente & \underline{je vous ai dit} qu'il faudra parler
+après \tabularnewline
+28 & Prévenu & \underline{pardon} \emph{(s'éloigne du micro)} \comm{TRÈS
+BAS} \underline{excusez-moi} \comm{TB} \tabularnewline
+29 & Avocat & \emph{(vient près de son client)} \comm{TRÈS BAS}
+\underline{n'interrompez
+  personne} \comm{TB} \tabularnewline
+30 & Présidente & vous avez dit \underline{je fais toujours les
+  poubelles} j'ai pris la carabine et les cartouches et
+\underline{j'ai été le long (de la voie ferrée)} et je me suis amusé
+à tirer sur une canette de bière \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Présidente}} \tabularnewline
+\tabularnewline
+30b & Présidente & alors heu qu'est-ce que vous dites aujourd'hui
+puisque vous nous dites j'ai menti je vous écoute \tabularnewline
+31 & Prévenu & alors bon j'ai menti \comm{/} \tabularnewline
+32 & Présidente & alors allez-y \tabularnewline
+33 & Prévenu & mais ce que je vais dire n'a pas beaucoup
+\underline{d'importance} \tabularnewline
+34 & Présidente & \emph{(Sourit, hoche la tête ; attitude
+  bienveillante)} \underline{mais si} mais si \underline{ça nous
+  intéresse} cette histoire de carabine \tabularnewline
+35 & Prévenu & \underline{(mais là} \comm{(..)} la carabine n'était pas à
+côté de moi il n'y avait pas de cartouche je sais que c'est pas très
+important mais quand même euh j'aimerais le dire \comm{(.)} \underline{elle
+  était} \tabularnewline
+36 & Présidente & \underline{alors repartez} depuis le début \comm{(.)}
+avant que la police n'arrive est-ce que vous étiez bien en train de
+vous amuser avec une carabine \tabularnewline
+37 & Prévenu & avant qu'elle n'arrive \comm{/} \tabularnewline
+38 & Présidente & oui \comm{/} \tabularnewline
+39 & Prévenu & c'est clair et net \tabularnewline
+40 & Présidente & alors expliquez-nous \comm{(..)} comment vous êtes allé
+vous amuser avec la carabine allez-y  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Prévenu}} \tabularnewline
+\tabularnewline
+40b & Présidente & expliquez-nous ce qui s'est passé \tabularnewline
+41 & Prévenu &  eh bien euh \tabularnewline
+42 & Présidente & mm où l'avez-vous trouvé \emph{et caetera}
+\tabularnewline
+43 & Prévenu & o je l'ai trouvée \comm{(.)} je ne l'ai pas trouvée
+\tabularnewline
+44 & Présidente & bon comment l'avez-vous eue \comm{/} \tabularnewline
+45 & Prévenu & je l'ai achetée \comm{/} \tabularnewline
+46 & Présidente & où ça \tabularnewline
+47 & Prévenu & par un:: quelqu'un qui habite dans mon quartier voilà
+\tabularnewline
+48 & Présidente & vous avez pas bu un peu d'alcool avant de venir
+aujourd'hui à l'audience \tabularnewline
+49 & Prévenu & nan j'ai bu un café \tabularnewline
+50 & Présidente & seulement un café \tabularnewline
+51 & Prévenu & oui c'est la veille \tabularnewline
+52 & Présidente & alors est-ce que vous \underline{prenez des
+  comprimés} \tabularnewline
+53 & Prévenu & FORT \underline{c'est la veille madame} F j'ai pris un
+compr- un tranxène c- aujourd'hui \tabularnewline
+54 & Présidente & ah c'est ça d'accord hein ça peut faire un peu la
+même impression alors on repart à zéro vous avez acheté cette
+carabine combien où à qui allez-y \tabularnewline
+55 & Prévenu & j'ai acheté la carabine deux cent cinquante euros
+\tabularnewline
+56 & Présidente & c'est cher \comm{(2s)} à qui \comm{/} \tabularnewline
+57 & Prévenu & même le policier m'a dit que je m'étais fait arnaquer
+\tabularnewline
+58 & Présidente & sûr \comm{(..)} à qui \comm{(2s)} à qui l'avez-vous achetée
+\tabularnewline
+59 & Prévenu & ah à: Christian \comm{(..)} voilà \tabularnewline
+60 & Présidente & vous pouvez pas dire plus \tabularnewline
+61 & Prévenu & ha ben j'connais pas son nom de famille \emph{(se
+  rapproche du micro)} \comm{PLUS FORT} je ne connais pas son nom de famille
+\comm{PF} et voilà \comm{/} \tabularnewline
+62 & Présidente & et les cartouches \tabularnewline
+63 & Prévenu & hein \comm{(..)} les \underline{cartouches} \tabularnewline
+64 & Présidente & \underline{où avez-vous} trouvé les cartouches ou
+acheté les cartouches \comm{/}  \tabularnewline
+65 & Prévenu & les cartouches c'est Christian qui est allé me les
+chercher je voulais pas spécialement euh des cartouches je voulais
+\comm{(..)} avoir un truc \comm{BAS} (pour) faire bien \comm{B} je voulais pas tstt
+j'avais vraiment pas euh envie \comm{(..)} de faire quelque chose de mal
+avec c'est tout hein je: \emph{(lève ses bras, geste "englobant")}
+\tabularnewline
+66 & Présidente & vous êtes quand même allé vous promener avec et
+vous avez tiré euh en milieu \underline{urbain quand même} hein
+\tabularnewline
+67 & Prévenu & \underline{oui c'est vrai} \underline{parce que}
+\tabularnewline
+68 & Présidente & \underline{on vous reproche} pas la mise en
+danger  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Présidente}} \tabularnewline
+\tabularnewline
+68b & Présidente & on vous reproche pas des infractions comme ça on
+\underline{vous reproche} le port le port d'arme prohibé
+\tabularnewline
+69 & Prévenu & \underline{oui mais bon} \comm{(..)} \underline{bon je me
+  trouve} désolé d'être ici \comm{(..)} \underline{j'ai fait une bêtise}
+\tabularnewline
+70 & Présidente & \underline{cela dit monsieur} oui vous êtes ici et
+\underline{vous avez pris du tranxène} parce que peut-être ça vous
+est nécessaire mais ça se sent si vous aviez pris en plus de la
+bière pour venir ici ça serait ennuyeux mais à l'époque en tout cas
+ce jour-là vous aviez mélangé (l')tranxène et bière ça c'est sûr
+c'est vous qui l'avez dit \tabularnewline
+71 & Prévenu & c'est clair et net oui \comm{(..)} je le jure
+\tabularnewline
+72 & Présidente & donc même si vous vérifiez que le tunnel il est
+\comm{(1s)} bien vous comprenez bien qu'on se maîtrise pas parfaitement
+quand on a ça \comm{/} \tabularnewline
+73 & Prévenu & c'est clair \comm{/} \tabularnewline
+74 & Présidente & quand on \underline{a avalé ça} \tabularnewline
+75 & Prévenu & \underline{j'ai bien} compris maintenant j'ai bien
+compris j'ai bien
+compris \tabularnewline
+76 & Présidente & alors pourquoi vous (re)prenez du tranxène
+maintenant \underline{c'est un} médecin qui vous l'ordonne
+\tabularnewline
+77 & Prévenu & \underline{heu}  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Prévenu}} \tabularnewline
+\tabularnewline
+77b & Prévenu & c'est un médecin qui me l'ordonne mais maintenant
+heu je pense que je vais tout arrêter et voilà quoi parce que ça me
+va pas moi je suis \emph{(remue la tête)} \tabularnewline
+78 & Présidente & mmmm \tabularnewline
+79 & Prévenu & avant j'étais \emph{(lève la tête au ciel)} je suis
+tombé du trentième étage quoi en fait avant j'étais bien j'avais
+beaucoup de travail et tout il m'est arrivé quelque chose et puis
+voilà \comm{(1s)} disons point de vue travail hein \comm{(..)} \underline{j'ai
+  perdu une bonne place} \tabularnewline
+80 & Présidente & \underline{vous vous voulez dire que quand}
+\tabularnewline
+81 & Prévenu & je travaillais dans une compagnie d'aviation \comm{/}
+\tabularnewline
+82 & Présidente & on va parler de vous on va parler de vous sur les
+faits moi j'ai terminé des questions sur les faits maître madame le
+Procureur \comm{/} \tabularnewline
+83 & Procureur & c'est du calibre combien madame la présidente très
+exactement \tabularnewline
+84 & Présidente & heu humhum sixième catégorie calibre douze à un
+coup \tabularnewline
+85 & Prévenu & heu \tabularnewline
+86 & Procureur & \comm{(!!!)} c'est un petit peu léger monsieur je:: (du)
+calibre douze c'est extrêmement dangereux \tabularnewline
+87 & Prévenu & oui c'est c'est \underline{c'est vrai c'est vrai}
+\tabularnewline
+88 & Présidente & \underline{alors que \comm{(!!!)}} \tabularnewline
+89 & Prévenu & \underline{oui} mais ce sont des vieilles carabines \comm{/}
+\tabularnewline
+90 & Présidente & \emph{répète doucement} des vieilles carabines \comm{/}
+\tabularnewline
+91 & Prévenu & comme ça \emph{(fait le geste de recharger la
+  carabine)\footnotemark[2]} \tabularnewline
+92 & Présidente & comme ça oui \comm{/} \tabularnewline
+93 & Prévenu & et qui marchent un coup sur deux \tabularnewline
+94 & Présidente & mm mm \tabularnewline
+95 & Prévenu & donc voilà \tabularnewline
+96 & Présidente & \underline{je tenais} \tabularnewline
+97 & Prévenu & \underline{j'aurais voulu} qu'on me la présente pour
+que vous la voyiez quoi \comm{/} \tabularnewline
+98 & Procureur & \underline{tout dépend si \comm{(!!!)}} \tabularnewline
+99 & Présidente & elle est sous scellés \underline{on peut la voir}
+mais de toute façon elle est décrite hein elle risque d'être
+confisquée alors en ce qui vous concerne vous monsieur
+\tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Présidente}} \tabularnewline
+\tabularnewline
+99b & Présidente & vous avez dit que vous êtes commerçant \comm{(3s)}
+qu'est-ce que \underline{ça veut dire} \tabularnewline
+100 & Prévenu & \underline{je faisais les} marchés mais depuis qu-
+depuis ça fait déjà cinq mois que je me suis fait interpelé depuis
+j'arrive plus à manger je: \comm{/} \tabularnewline
+101 & Présidente & \underline{mais c'est pas à cause c'est pas à
+  cause de} c'est pas à cause de ça \tabularnewline
+102 & Prévenu & \comm{LENTEMENT} \underline{j'ai plus le moral nan} je dors
+plus la nuit \comm{L}  \tabularnewline
+103 & Présidente & mais c'est pas à cause de cette
+\underline{histoire}  \tabularnewline
+104 & Prévenu & \underline{mais} si je: moi je  \tabularnewline
+105 & Présidente & uniquement à cause de cette histoire
+\tabularnewline
+106 & Prévenu & pour moi c'est très important ça pour moi c'est
+quelque chose de très important  \tabularnewline
+107 & Présidente & c'était la première fois pourtant vous avez dit
+je suis connu de la police ça voulait dire quoi quand vous avez dit je
+suis connu de la police  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Prévenu}}  \tabularnewline
+\tabularnewline
+108 & Prévenu & et ben parce qu'ils m'ont arrêté euh ils m'ont fait
+les arrestations les contrôles les machins et:  \tabularnewline
+109 & Présidente & des contrôles des machins pas avec l'histoire de
+stupéfiants non vous êtes pas fait arrêter en train de \comm{/}
+\tabularnewline
+110 & Prévenu & une fois je me suis fait arrêter effectivement \comm{(..)}
+avec heu: \comm{(...)} une dose à l'époque \comm{/}  \tabularnewline
+111 & Présidente & une dose de \underline{quoi}  \tabularnewline
+112 & Prévenu & \underline{y'a} \comm{FORT} une dose d'héroïne \comm{F}
+\tabularnewline
+113 & Présidente & ben voilà  \tabularnewline
+114 & Prévenu & \comm{FORT} il y a huit ans de ça \comm{F}  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Présidente}}  \tabularnewline
+\tabularnewline
+115 & Présidente & ben voilà \comm{(..)} et  ça a pas du vous faire du bien
+et depuis \underline{huit} \comm{/}  \tabularnewline
+116 & Prévenu & \underline{nan} pas du tout au contraire au
+contraire  \tabularnewline
+117 & Présidente & comment ça  \tabularnewline
+118 & Prévenu & ça m'a pas fait du bien du tout  \tabularnewline
+119 & Présidente & ouais vous avez \comm{/}  \tabularnewline
+120 & Prévenu & ça m'a coulé c'est ce qui m'a coulé  \tabularnewline
+121 & Présidente & vous avez arrêté complètement complètement
+\tabularnewline
+122 & Prévenu & j'ai arrêté totalement \comm{(2s)}  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Prévenu}}  \tabularnewline
+\tabularnewline
+122b & Prévenu & voilà mais je m'en sors bien parce que \comm{/}
+\tabularnewline
+123 & Présidente & parce que vos parents vous ont vous logent \comm{/}
+\tabularnewline
+124 & Prévenu & sont gentils avec moi \comm{/}  \tabularnewline
+125 & Présidente & d'accord \comm{/}  \tabularnewline
+126 & Prévenu & sometime de temps en temps pardon \comm{PLUS FORT} de temps
+en temps \comm{PF}  \tabularnewline
+127 & Présidente & j'avais compris \emph{(inspiration)} madame le
+procureur heu avez-vous des questions sur la personnalité \comm{/}
+\tabularnewline
+128 & Procureur & aucune question  \tabularnewline
+129 & Présidente & maître  \tabularnewline
+130 & Avocat & \comm{PEU AUDIBLE} (moi aussi pas de question) \comm{PA}
+\tabularnewline
+131 & Présidente & monsieur heu asseyez-vous devant votre avocat
+vous avez maître des documents sur le suivi médical  \tabularnewline
+132 & Avocat & \underline{\comm{(!!!)}}  \tabularnewline
+133 & Prévenu & \underline{je voulais dire des choses}
+\tabularnewline
+134 & Présidente & vous vouliez dire quelque chose dites-le \comm{/}
+\tabularnewline
+135 & Prévenu & j'ai envie de dire beaucoup de choses
+\tabularnewline
+136 & Présidente & oui mais dites ce qui vous paraît important
+\tabularnewline
+137 & Prévenu & je peux m'approcher de vous  \tabularnewline
+138 & Présidente & mm non l'audience est publique l'audience est
+publique et il faut que madame le \underline{procureur entende} tout
+ce que vous dites  \tabularnewline
+139 & Prévenu & \underline{ben ok} alors non je: euh préfère pas
+\tabularnewline
+\tabularnewline \midrule
+\multicolumn{3}{c}{\scshape{Coupure au montage}}\footnotemark[3]
+\tabularnewline \midrule
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Avocat}} \tabularnewline
+\tabularnewline
+140 & Avocat & ce ce sentiment d'ambiguïté à la
+fois quelqu'un qui va mal et quelqu'un qui est capable de prendre
+en charge son destin euh et: de de réaliser des actes qui lui
+permettrait d'aller mieux c'est effectivement monsieur Tabar et je
+crois que il qu'il faut l'aider dans cette démarche alors moi
+j'avais prévu de vous demander à titre principal la confiscation
+des scellés effectivement monsieur Tabar n'est pas quelqu'un euh à
+qui on peut confier une arme euh je vous demandais cette
+confiscation à titre principal en dehors de toute autre peine euh
+j'aurai pu également vous demander de prononcer une expertise
+psychologique de mon client \emph{(se tourne vers son client et le
+  regarde)} pour déterminer son niveau de responsabilité \comm{(4s)}
+\emph{(exaspérée, énervée, désespérée - sans doute - par
+  l'attitude de son client - celui-ci étant hors-champ
+  nous ne pouvons qu'émettre des suppositions ; lève les yeux au
+  ciel, tape sur son \og pupitre \fg et soupire)} bon
+\tabularnewline
+141 & Présidente & allez-y allez-y  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Prévenu}}  \tabularnewline
+\tabularnewline
+& & \emph{Le prévenu est assis devant son avocat (et face à la
+  Présidente) et porte son regard sur son avocat, la tête tournée.}
+\tabularnewline
+142 & Avocat & \comm{VOIX \og VIBRANTE \fg} troisième chose bien évidemment
+que j'peux \comm{VV} demander  c'est une peine de sursis mise à l'épreuve et
+donc rejoindre les réquisitions de madame le Procureur
+\tabularnewline
+& & \emph{Le prévenu détourne la tête de son avocat et son regard
+  revient sur le tribunal - après s'être arrêté sur la caméra de R.
+  Depardon.}  \tabularnewline
+142b & Avocat & car effectivement je crois que les soins s(er)ont
+obligatoires maintenant je:: vous laisse le soin euh de déterminer la
+peine la plus juste et encore une fois la plus utile à mon client mais
+j'insiste sur la la possibilité de prononcer la confiscation à titre
+principal  \tabularnewline
+143 & (Procureur) & merci beaucoup  \tabularnewline
+144 & Présidente & le tribunal vous remercie monsieur levez-vous
+vous vouliez euh préciser rectifier et ajouter \underline{quelque
+  chose} allez-y  \tabularnewline
+145 & Prévenu & \emph{(Durant toute la durée de cette intervention,
+  il tiendra le micro de la main droite puis de la main gauche dans un
+  second temps sauf lorsqu'il utilisera ses mains pour certains gestes
+  que nous signalerons.)} \underline{voilà} \comm{(...)} je suis tout à fait
+d'accord avec ce que madame le Procureur a dit mais je ne suis pas un
+malade je ne suis pas un fou et j'ai décidé d'arrêter \emph{("dessine"
+  une ligne horizontale avec les deux mains à plat)} tout je n'ai pas
+besoin de traitement j'ai besoin moi je je suis un battant moi je suis
+un battant je vais sortir \comm{(.)} d'ici un mois je vais trouver une place
+je vais travailler et c'est tout j'veux pas qu'on j'vais être obligé
+\emph{(la main droite tendue, pointe l'index et désigne deux points
+  successivement)} de courir à droite à gauche et ça va m'empêcher
+\comm{(...)}  \tabularnewline
+146 & Présidente & bien j'ai compris ce que vous vouliez dire le
+sursis avec mise à l'épreuve avec obligation de soins c'est pas
+vraiment la peine que vous choisiriez pour \underline{vous} \comm{/}
+\tabularnewline
+147 & Prévenu & \underline{c'est} pas nécessaire j'en suis sûr
+\underline{et certain}  \tabularnewline
+148 & Présidente & \underline{ça vous paraît pas nécessaire} bien eh
+bien on va essayer de réfléchir à ça vous vous retirez dans la salle
+la décision va être rendue tout à l'heure après la suspension
+d'audience je vous rendrai \underline{les papiers}  \tabularnewline
+149 & Prévenu & \underline{je vous} remercie beaucoup \comm{/}
+\tabularnewline
+150 & Présidente & oui \comm{/}  \tabularnewline
+151 & Prévenu & excusez-moi de vous avoir dérangés  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Présidente}}  \tabularnewline
+\tabularnewline
+152 & Présidente & non mais c'est \emph{(grand sourire)} affaire suivante \emph{(regard tendre ?)} \tabularnewline
+\tabularnewline \midrule
+\tabularnewline
+\multicolumn{3}{c}{\large\scshape{Verdict}} \tabularnewline
+\tabularnewline \multicolumn{3}{c}{\scshape{Caméra sur
+    Présidente}} \tabularnewline
+\tabularnewline
+153 & Présidente & le tribunal après en avoir délibéré et par
+décision contradictoire vous condamne à la peine de cinquante jours
+amende à huit euros chacun  \tabularnewline
+\tabularnewline
+\multicolumn{3}{c}{\scshape{Caméra sur Prévenu}} \tabularnewline
+\tabularnewline
+153b & Présidente & donc vous attendez \comm{(.)} que \comm{(.)} le service de
+l'exécution des peines viennent vous demander de régler cette amende
+vous devez le faire immédiatement sinon vous irez en prison pendant
+vingt-cinq jours est-ce que vous avez compris la décision
+\tabularnewline
+154 & Prévenu & j'ai très bien compris la décision \comm{(..)} mais euh::
+\comm{(1s)} pendant vingt-cinq euh pendant cinquante jours \underline{je}
+dois payer une amende de \comm{/}  \tabularnewline
+155 & Présidente & \underline{[...]} huit euros  \tabularnewline
+156 & Prévenu & huit euros  \tabularnewline
+157 & Présidente & \underline{(plus exactement)}  \tabularnewline
+158 & Prévenu & \underline{et je} et je l'envoie comment
+\tabularnewline
+159 & Présidente & vous les réservez \comm{(.)} et au bout de cinquante
+jours on vous réclamera la somme globale de quatre cent euros je crois
+que votre avocat va vous expliquer comment les choses se passent avec
+le service de l'exécution des peines  vous avez compris \comm{(2s)} vous
+pouvez partir si vous avez des documents Maître vous venez les
+récupérer  \tabularnewline
+160 & Prévenu & merci  \tabularnewline
+161 & Présidente & et je crois que vous en avez \comm{(..)} affaire numéro
+six .....  \tabularnewline
+\tabularnewline \bottomrule
+\tabularnewline
+\EndProcessTable
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% FIN TRANSCRIPTION %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\PrintTable
+
+\footnotetext[1]{Nous entendons alors en fond \og je vais chercher
+  l'avocat \fg, intervention sans doute produite par l'huissier.}
+\footnotetext[2]{\label{fnotes}Au geste qu'il effectue, nous
+  comprenons que cette carabine était une carabine à verrou,
+  c'est-à-dire une carabine avec laquelle il est nécessaire de manier
+  un verrou afin d'éjecter la douille et de mettre en place la balle
+  suivante.}
+\footnotetext[3]{Cette coupure est perceptible de façon
+  plus qu'évidente ; de plus, le \og plaidoyer \fg de l'avocat qui
+  suit nous fait comprendre que ce qui a été coupé correspond
+  essentiellement au réquisitoire du Procureur de la République.} 
+
+\end{document}

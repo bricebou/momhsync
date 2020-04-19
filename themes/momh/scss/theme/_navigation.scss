@@ -1,0 +1,177 @@
+nav#main {
+	ul {
+		list-style: none;
+		margin: 0;
+		// li {
+		// 	padding: 0.4rem 0.8rem;
+		// }
+
+		ul {
+			padding-right: 0;
+			// font-size: 0.8rem;
+
+			// ul {
+			// 	text-transform: none;
+			// 	// font-size: 0.8rem;
+			// }
+		}
+
+		li {
+			margin: 0;
+
+			a {
+				display: block;
+				padding: 0.4rem 0.8rem !important;
+			}
+		}
+	}
+	.off-canvas {
+		.off-canvas-toggle {
+			left: unset;
+			right: 0.4rem;
+			top: -2.6rem;
+
+		}
+		.off-canvas-sidebar {
+			left: unset!important;
+			right: 0;
+			width: 45vmax;
+			background: $light-color;
+			font-weight: 400;
+			transform: translateX(100%);
+
+			&:target,
+			&.active {
+				transform: translateX(0);
+			}
+			&:target ~ .off-canvas-overlay,
+			&.active ~ .off-canvas-overlay {
+				display: block;
+				z-index: $zindex-1;
+			}
+
+			a[href="#close"] {
+				position: absolute;
+				top: 1.2rem;
+				right: .8rem;
+			}
+
+			ul.momh-menu-main {
+				margin-top: 3rem;
+				text-transform: uppercase;
+				font-size: 0.9rem;
+				
+				> li {
+					padding-left: 0;
+				}
+
+				li {
+					padding-left: 0.8rem;
+					padding-right: 0.4rem;
+				}
+				
+				a {
+					@extend .links-bg;
+				}
+
+				ul {
+					font-size: 0.8rem;
+
+					ul {
+						text-transform: none;
+
+					}
+					li.selected {
+						& > a {
+							// background: darken($bg-color, 10%);
+							background: $dark-color;
+							color: $light-color;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+	ul.momh-menu-main-md {
+		@include vertical-align-25("relative");
+		display: flex;
+		align-items: center;
+		align-content: center;
+
+		text-transform: lowercase;
+		font-size: 1rem;
+		
+		& > li {
+			@extend .links-ovr;
+
+			&.selected {
+				color: $dark-color;
+				text-decoration: overline;
+
+				a {
+					color: $dark-color;
+				}
+			}
+		}
+
+		li {
+			position: relative;
+			float: left;
+			
+			ul {
+				display: none;
+				position: absolute;
+				font-size: 0.85rem;
+			}
+
+			&:hover {
+				& > ul {
+					display: block;
+					width: 12.4rem;
+					background-color: rgba($light-color, 0.85);
+					box-shadow: 0 .05rem .2rem rgba($dark-color,.3);
+					border-radius: .1rem;
+					z-index: 500;
+				}
+
+				li {
+					float: none;
+					margin: 0;
+					padding: 0;
+					
+					a {
+						@extend .links-bg;
+					}
+
+					ul {
+						width: 10rem;
+						font-size: 0.75rem;
+
+						a {
+							white-space: nowrap;
+							@include text-ellipsis;
+						}
+					}
+
+					&.selected {
+						& > a {
+							// background: darken($bg-color, 10%);
+							background: $dark-color;
+							color: $light-color;
+						}
+					}
+				}
+			}
+
+			ul ul {
+				left: 100%;
+				top: 0;
+			}
+		}
+		
+		
+	}
+}

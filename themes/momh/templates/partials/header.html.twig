@@ -1,0 +1,20 @@
+<header>
+  <div class="container {{ grid_size }}">
+    <a id="site_title" href="{{ home_url }}" class="{{ theme_var('header-font-align') }} ">
+        {% include 'partials/logo-svg.html.twig' %}
+        {{ config.site.title }}
+    </a>
+        
+    {% if theme_var('header-fitted') %}
+      <script>
+        if (window.innerWidth > {{ theme_var('header-fitted-min-width') }}) {
+          window.fitText( document.getElementById("site_title"), 1, { maxFontSize: "{{ theme_var('header-fitted-max') }}px" } );
+        }
+      </script>
+    {% endif %}
+  
+    {% block navigation %}
+      {% include 'partials/navigation.html.twig' %}
+    {% endblock %}
+  </div>
+</header>

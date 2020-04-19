@@ -1,0 +1,95 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{avm}
+\usepackage{tipa}
+
+
+
+\begin{document}
+
+\begin{avm}\textipa{[kK@]} :
+\[ \[ Seg : & \<\textipa{k}\> \cr
+   Pos : & 1 \cr
+   Pc : & i \]
+& \[ Seg : & \<\textipa{K}\> \cr
+   Pos : & 1 \cr
+   Pc : & p \]
+& \[ Seg : & \<\textipa{@}\> \cr
+   Pos : & 2 \cr
+   Pc : & s \] \]
+\end{avm}
+
+
+\vspace{2cm}
+
+
+\begin{avm}
+\[
+\[ SEG : & \[ SLAR : & \[ MODE : & @ \@1 \cr
+                      PLACE : & h ; \textglotstop \cr
+                      VELUM : & \textsl{Velum} \cr
+                      LATERAL: & \textsl{Lateral} \cr
+                   \] \cr
+            LAR : & \textsl{Lar} \cr
+            TETE : & \@1 \] \cr
+   Pos : & 1 \cr
+   Pc : & i
+          \] \cr
+\[ SEG : & \[ SLAR : & \[ MODE : & @ \@1 ; R \cr
+                      PLACE : & \textsl{Place} \cr
+                      VELUM : & \textsl{Velum} \cr
+                      LATERAL: & \textsl{Lateral} \cr
+                   \] \cr
+            LAR : & \textsl{Lar} \cr
+            TETE : & \@1 \] \cr
+   Pos : & 1 \cr
+   Pc : & p \] \] 
+\end{avm}
+
+
+\newpage
+
+
+\newbox\matrixsynsem \newbox\headdtr 
+\newbox\compdtrone   \newbox\compdtrtwo
+
+{\scriptsize
+\avmoptions{center}
+\setbox\matrixsynsem=\hbox{\begin{avm}
+\osort{synsem}{\[local & \[cat & \[ \] \\
+                    content & \[ \]\]\]}
+\end{avm}}
+
+\setbox\headdtr=\hbox{\begin{avm}
+\osort{word}{\[ phon\;\<\rm likes\>\\
+            synsem\;\[local\[ cat\;\[ head  \; \@{5}\\
+                                      arg-s\;\< \@{1},\@{2}\>\] \\
+                              content\;\@{6} \]\]\]} \end{avm}}
+
+\setbox\compdtrone=\hbox{\begin{avm}
+\sort{phrase}{\[ phon\;\<\rm fido\>\\
+            synsem\;\@{1}\;\[local\[ cat\;\[ head\;noun\\
+                                      arg-s\;\< \>\] \\
+                              content\;\@{3} \]\]\]} \end{avm}}
+
+\setbox\compdtrtwo=\hbox{\begin{avm}
+\sort{phrase}{\[ phon\;\<\rm bones\>\\
+            synsem\;\@{2}\;\[local\[ cat\;\[ head\;noun\\
+                                      arg-s\;\< \>\] \\
+                              content\;\@{4} \]\]\]} \end{avm}}
+
+\avmoptions{active,sorted}
+\begin{avm} \hspace{-1in}
+[{phrase} phon\;\<\rm fido likes bones\> \\
+       synsem\;[{synsem} local [{} cat & [{} head & @{5}\\
+                                             arg-s & \< \; \>] \\
+                                   content & @{6}[{psoa} reln\;like \\
+                                                     arg1\;@{3} \\
+                                                     arg2\;@{4} ]]]\\
+       dtrs\;\sort{head-struc}{[{} head-dtr\;\box\headdtr \\
+                  comp-dtrs\;< \box\compdtrone , \\ \hspace{.5in}
+                                            \box\compdtrtwo>]}]
+\end{avm}}
+
+
+\end{document}

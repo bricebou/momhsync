@@ -1,0 +1,53 @@
+.text-weight-light {
+  font-weight: 200;
+}
+
+.default-animation {
+  transition: all 0.8s ease;
+}
+
+.links-ovr {
+  text-decoration: none;
+  color: $primary-color;
+  transition: color 0.2s linear, -webkit-text-decoration 0.2s linear;
+  transition: text-decoration 0.2s linear, color 0.2s linear;
+  transition: text-decoration 0.2s linear, color 0.2s linear, -webkit-text-decoration 0.2s linear;
+  &:hover,
+  &:active {
+    color: $dark-color;
+    text-decoration: overline;
+  }
+}
+
+.links-bg {
+	color: $primary-color;
+	padding: 0 2px;
+	background: transparent linear-gradient($bg-color, $bg-color) no-repeat scroll center bottom/100% 2px;
+	background-size: 100% 2px;
+	transition: background-size 0.2s ease 0s, color 0.2s ease 0s;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $dark-color;
+		background-size: 100% 100%;
+	}
+}
+
+.fleft {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.fcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fright {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

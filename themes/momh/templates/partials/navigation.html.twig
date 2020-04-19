@@ -1,0 +1,53 @@
+{% import 'macros/macros.html.twig' as macros %}
+
+<nav id="main">
+  <div class="off-canvas">
+    <!-- off-screen toggle button -->
+    <a class="off-canvas-toggle btn btn-action show-sm" href="#sidebar-menu">
+      <i class="icon icon-menu"></i>
+    </a>
+
+    <div id="sidebar-menu" class="off-canvas-sidebar">
+      <a href="#close" class="btn btn-action">
+        <i class="icon icon-close"></i>
+      </a>
+{# 
+      <div id="close">
+        <a class="btn btn-action" href="#close"><i class="fa fa-times"></i></a>
+      </div> #}
+      <ul class="momh-menu-main">
+        {% if theme_var('dropdown.enabled') %}
+          {{ macros.nav_loop(pages) }}
+        {% else %}
+          {% for page in pages.children.visible %}
+            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
+            <li class="{{ current_page }} menu-item">
+              <a href="{{ page.url }}">
+                {{ page.menu }}
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+
+    <a class="off-canvas-overlay " href="#close"></a>
+
+    <div class="off-canvas-content hide-sm">
+      <ul class="momh-menu-main momh-menu-main-md {{ theme_var('navbar-align') }}">
+        {% if theme_var('dropdown.enabled') %}
+          {{ macros.nav_loop(pages) }}
+        {% else %}
+          {% for page in pages.children.visible %}
+            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
+            <li class="{{ current_page }} menu-item">
+              <a href="{{ page.url }}">
+                {{ page.menu }}
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

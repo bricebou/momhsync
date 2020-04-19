@@ -1,0 +1,23 @@
+{# FROM DELIVER / QUARK THEMES WITH MINOR CHANGES #}
+{% macro nav_loop(page) %}
+  {% import _self as macros %}
+  {% for p in page.children.visible %}
+    {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
+    {% if p.children.visible.count > 0 %}
+      <li class="has-children menu-item {{ current_page }}">
+        <a href="{{ p.url }}">
+          {{ p.menu }}
+        </a>
+        <ul class="">
+          {{ macros.nav_loop(p) }}
+        </ul>
+      </li>
+    {% else %}
+      <li class="{{ current_page }} menu-item">
+        <a href="{{ p.url }}">
+          {{ p.menu }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

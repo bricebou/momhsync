@@ -1,0 +1,5 @@
+{% if page.taxonomy[taxon] %}
+	{% for el in page.taxonomy[taxon] %}
+		<a class="taxonomy {{ label_style ?: 'taxonomy_hashtag' }} {% if el == activetaxon %}taxonomy_active_link{% endif %}" href="{{ base_url }}/{{ taxon }}{{ config.system.param_sep }}{{ el }}#body-wrapper">{{ el }}</a>	
+	{% endfor %}
+{% endif %}

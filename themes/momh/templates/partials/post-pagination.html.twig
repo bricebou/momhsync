@@ -1,0 +1,24 @@
+<div class="columns">     
+  <div class="column col-12 pagination pagination_article">
+    {% if not page.isLast %}
+      <a href="{{ page.prevSibling.url }}" class="pa_recent">
+        <div class="pa_arrow"><i class="icon icon-arrow-left"></i></div>
+        <div class="pa_title">
+          <span class="pa_date">{{ page.prevSibling.date|date("d/m/Y", "Europe/Paris") }}</span>
+          <br>
+          <span>{{ page.prevSibling.title }}</span>
+        </div>
+      </a>
+    {% endif %}
+    {% if not page.isFirst %}
+      <a href="{{ page.nextSibling.url }}" class="pa_older">
+        <div class="pa_title">
+          <span>{{ page.nextSibling.title }}</span>
+          <br>
+          <span class="pa_date">{{ page.nextSibling.date|date("d/m/Y", "Europe/Paris") }}</span>
+        </div>
+        <div class="pa_arrow"><i class="icon icon-arrow-right"></i></div>
+      </a>
+    {% endif %}
+  </div>
+</div>
