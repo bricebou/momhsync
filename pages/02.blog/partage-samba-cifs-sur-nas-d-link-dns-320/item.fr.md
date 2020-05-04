@@ -8,6 +8,9 @@ taxonomy:
         - NAS
         - 'Raspberry Pi'
         - réseau
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 recaptchacontact:
     enabled: false
 ---
