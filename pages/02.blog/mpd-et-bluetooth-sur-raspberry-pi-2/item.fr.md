@@ -8,6 +8,9 @@ taxonomy:
         - mpd
         - 'Raspberry Pi'
         - bluetooth
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 recaptchacontact:
     enabled: false
 ---
