@@ -8,6 +8,9 @@ taxonomy:
         - NAS
         - fun_plug
         - torrent
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 recaptchacontact:
     enabled: false
 ---
