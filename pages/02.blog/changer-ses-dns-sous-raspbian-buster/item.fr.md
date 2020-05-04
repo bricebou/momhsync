@@ -5,8 +5,11 @@ taxonomy:
     category:
         - Linux
     tag:
-        - réseau
         - 'Raspberry Pi'
+        - réseau
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Afin de pouvoir accéder à certains sites tels [EZTV](https://eztv.io/) ou [YTS / YIFY](https://yts.mx/) &ndash; que mon opérateur bloque &ndash;, il convient de passer par des serveurs DNS qui ne soient pas «&nbsp;menteurs&nbsp;»... On peut par exemple utiliser les serveurs bien connus de Google, mais on peut aussi privilégier ceux proposés par FDN (French Data Network), un fournisseur d'accès à Internet associatif sur [cette page](https://www.fdn.fr/actions/dns/).

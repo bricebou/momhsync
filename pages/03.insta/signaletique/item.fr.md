@@ -4,10 +4,13 @@ media_order: IMG_4124.JPG
 date: '23-03-2018 00:00'
 taxonomy:
     instatag:
-        - ski
         - Mont-Dore
+        - neige
+        - ski
         - Super-Besse
         - signalisation
-        - neige
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 

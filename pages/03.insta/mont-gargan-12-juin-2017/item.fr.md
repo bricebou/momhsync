@@ -4,8 +4,11 @@ media_order: 'IMG_2590.JPG,IMG_2587.JPG'
 date: '12-06-2017 00:00'
 taxonomy:
     instatag:
+        - nuage
         - 'mont Gargan'
         - chapelle
-        - nuage
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 

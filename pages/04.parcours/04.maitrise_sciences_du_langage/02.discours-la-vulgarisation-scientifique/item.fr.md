@@ -3,6 +3,9 @@ title: 'Discours : la vulgarisation scientifique'
 media_order: M1_Socio.pdf
 date: '19-04-2020 20:06'
 visible: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Dans le cadre de l'UE Discours, j'ai eu à travailler sur le discours des médias et plus particulièrement sur le discours de vulgarisation scientifique dans la presse à partir d'un corpus limité à trois articles du _Monde_&nbsp;:

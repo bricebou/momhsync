@@ -5,9 +5,12 @@ taxonomy:
     category:
         - Linux
     tag:
-        - wifi
         - 'ASUS F200M'
+        - wifi
         - réseau
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Sous Xubuntu 15.04, si j'utilise le raccourci clavier `Fn+F1` pour mettre en veille mon netbook ASUS F200M, je rencontre un problème à la sortie de veille&nbsp;: le réseau ne fonctionne plus, bien que les connexions soient bien actives dans le NetworkManager...

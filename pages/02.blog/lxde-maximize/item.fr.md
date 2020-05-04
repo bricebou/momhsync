@@ -5,8 +5,11 @@ taxonomy:
     category:
         - Linux
     tag:
-        - personnalisation
         - LXDE
+        - personnalisation
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Par exemple, dans mon cas, `lxterminal`, qui a chaque démarrage me frustrait du fait de la taille de sa fenêtre. Utilisant par ailleurs régulièrement `tmux` (voir à ce sujet [«&#8239;My Own Tmux Cheat Sheet&#8239;»](/tutos/Linux/tmux_cheatsheet)), je souhaitais que `lxterminal` s'ouvre par défaut maximisée.

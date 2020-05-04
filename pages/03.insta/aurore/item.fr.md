@@ -7,5 +7,8 @@ taxonomy:
         - soleil
         - aurore
         - depuischezmoioupresque
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 

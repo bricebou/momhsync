@@ -8,6 +8,9 @@ taxonomy:
         - console
         - 'Raspberry Pi'
         - sous-titres
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 ## addic7ed-cli

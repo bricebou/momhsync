@@ -9,6 +9,9 @@ taxonomy:
         - mpdscribble
         - lastfm
         - console
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Utilisateur de [LastFM](https://www.last.fm/) et de [MPD](/blog/mpd-music-player-daemon "Installation et configuration de MPD") pour écouter ma musique, je dois pouvoir scrobbler les titres que j'écoute&nbsp;: _mpdscribble_ est la solution, particulièrement simple à installer et configurer.

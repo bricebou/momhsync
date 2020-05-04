@@ -1,6 +1,9 @@
 ---
 title: 'ncmpcpp, un client pour mpd'
 date: '04-09-2011 00:00'
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 ncmpcpp est un client pour [MPD](/blog/mpd-music-player-daemon "Installation et configuration de MPD"), plus complet que _ncmpc_, dont il reprend le mécanisme de navigation, l'interface en ncurse, apportant de nouvelles fonctionnalités parmi lesquelles la visualisation, l'édition des tags, la recherche avec des expressions régulières, une véritable navigation au sein de votre collection… 

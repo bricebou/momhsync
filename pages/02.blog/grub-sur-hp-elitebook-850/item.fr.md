@@ -5,9 +5,12 @@ taxonomy:
     category:
         - Linux
     tag:
-        - GRUB
         - partition
+        - GRUB
         - 'HP EliteBook'
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Après quelque frayeurs au re-démarrage après l'installation en dual-boot d'une Debian Buster sur mon portable HP EliteBook 850, je me retrouvais à devoir d'abord utiliser le _bootloader_ d'HP pour sélectionner ma partition où était installé ma Lubuntu ainsi que GRUB, puis de devoir sélectionner à nouveau sur quel système je voulais booter&nbsp;;la même mésaventure m'était arrivée avec une Lubuntu 18.04. Le «&nbsp;SecureBoot&nbp;» était pourtant bien désactivé...

@@ -7,6 +7,9 @@ taxonomy:
     tag:
         - Xfce
         - personnalisation
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Pour pouvoir personnaliser les notifications système, il convient de commencer par installer le paquet `xfce4-notifyd`&nbsp;:

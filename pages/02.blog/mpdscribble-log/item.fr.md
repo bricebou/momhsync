@@ -9,6 +9,9 @@ taxonomy:
         - mpdscribble
         - lastfm
         - console
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Par défaut, il semblerait que [mpdscribble](/blog/mpdscribble) ne conserve pas dans un log les morceaux scrobblés (sauf lorsque l'on n'a pas de connexion au service de scrobbling de LastFM).      

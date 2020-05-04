@@ -7,6 +7,9 @@ taxonomy:
     tag:
         - personnalisation
         - partition
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Sur mon netbook ASUS F200M, sous Xubuntu mais avec un dual-boot, certaines partitions «&nbsp;Windows&nbsp;» apparaissaient dans le volet de Thunar alors que je n'avais nul besoin de les monter.     

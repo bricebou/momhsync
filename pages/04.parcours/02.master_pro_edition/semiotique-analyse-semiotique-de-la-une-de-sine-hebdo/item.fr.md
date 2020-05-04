@@ -2,6 +2,9 @@
 title: 'Sémiotique : analyse sémiotique de la une de Siné Hebdo'
 media_order: M2E_SineHebdo.pdf
 visible: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Après bien des hésitations, je me suis décidé à travailler, en vue de la validation de l'UE «&nbsp;Sémiotique générale&nbsp;», sur les deux premières une du journal hebdomadaire _Siné Hebdo_ ; après validation de ce «&nbsp;corpus&nbsp;» par Jacques Fontanille, je me suis lancé dans l'analyse et me suis intéressé aux rôles actanciels et aux identités modale et passionnelle.

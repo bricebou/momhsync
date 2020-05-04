@@ -7,5 +7,8 @@ taxonomy:
         - randonnée
         - Cantal
         - 'Puy Griou'
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 

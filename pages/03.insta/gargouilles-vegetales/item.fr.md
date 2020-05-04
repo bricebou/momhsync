@@ -8,6 +8,9 @@ taxonomy:
         - Aurillac
         - randonnée
         - Cantal
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 À Saint-Simon, tout proche d'Aurillac, à côté de l'église, se trouve le «&nbsp;Sully&nbsp;», un tilleul datant du règne du roi Henri IV, planté vers 1600...

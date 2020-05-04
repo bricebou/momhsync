@@ -6,5 +6,8 @@ taxonomy:
     instatag:
         - Obi
         - Vaseix
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 

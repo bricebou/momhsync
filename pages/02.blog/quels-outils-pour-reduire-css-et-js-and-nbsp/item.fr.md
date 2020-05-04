@@ -5,8 +5,11 @@ taxonomy:
     category:
         - Linux
     tag:
-        - dev
         - bash
+        - dev
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 ## cleancss

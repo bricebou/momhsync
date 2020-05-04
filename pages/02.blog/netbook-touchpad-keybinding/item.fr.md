@@ -9,6 +9,9 @@ taxonomy:
         - touchpad
         - Xfce
         - 'ASUS F200M'
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Dans un [article précédent](/blog/netbook-keybindings), j'avais présenté un court script permettant d'activer et de désactiver le touchpad sur mon netbook ASUS F200M sous Xubuntu.

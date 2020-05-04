@@ -3,6 +3,9 @@ title: 'Psycholinguistique : «&nbsp;Perception de la parole&nbsp;» de Noël Ng
 media_order: M1_Psycho.pdf
 date: '16-04-2020 20:06'
 visible: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Dans le cadre de l'UE Psycholinguistique, j'ai réalisé un compte rendu du chapitre «&nbsp;Perception de la parole&nbsp;» rédigé par Noël Nguyen, et publié dans _Phonologie et Phonétique&nbsp;: Forme et Substance_ de N. Nguyen, S. Wauquier-Gravelines et J. Durand (pp.&nbsp;425-447, Paris&nbsp;: Lavoisier).      

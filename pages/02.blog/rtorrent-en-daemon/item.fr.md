@@ -8,6 +8,9 @@ taxonomy:
         - NAS
         - fun_plug
         - torrent
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Pour mes téléchargements, notamment de séries, j'utilise le logiciel [rTorrent](http://rakshasa.github.io/rtorrent/) installé sur mon NAS (un D-Link DNS-320 avec [fun_plug](http://nas-tweaks.net/371/hdd-installation-of-the-fun_plug-0-7-on-nas-devices/) par-dessus).    

@@ -8,6 +8,9 @@ taxonomy:
         - mpd
         - mpdscribble
         - lastfm
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 mpdscribble, une fois installé et configuré (cf. [cet article](/blog/mpdscribble "MPD et LastFM&nbsp;: mpdscribble")), ne scrobble que vers le service [last.fm](http://www.lastfm.fr).

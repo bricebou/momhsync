@@ -7,5 +7,8 @@ taxonomy:
         - Fresselines
         - confluent
         - Creuse
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 

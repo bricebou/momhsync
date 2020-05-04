@@ -10,6 +10,9 @@ taxonomy:
         - package
         - structure
         - syntaxe
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 _synttree_, comme son nom le laisse présager, permet de créer, comme d'autres packages et outils (cf. [LaTeX4Ling](http://www.essex.ac.uk/linguistics/external/clmt/latex4ling/trees/)) des arbres syntaxiques. Pour le télécharger, rendez-vous [ici](http://www.matijs.net/software/synttree/).

@@ -9,6 +9,9 @@ taxonomy:
         - encodage
         - 'Raspberry Pi'
         - sous-titres
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Régulièrement, les sous-titres ([téléchargés en ligne de commande](sous_titres_2020)) ne sont pas pris en compte par `omxplayer` que j'utilise sur mon Raspberry Pi&nbsp;; la raison&nbsp;? Ils ne sont tout simplement pas en UTF-8...

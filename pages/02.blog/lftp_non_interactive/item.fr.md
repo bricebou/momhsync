@@ -5,9 +5,12 @@ taxonomy:
     category:
         - Linux
     tag:
+        - console
         - ftp
         - lftp
-        - console
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Dans un [précédent article](/blog/lftp "lftp&nbsp;: un client FTP en ligne de commande"), nous avons présenté le client FTP en ligne de commande [lftp](http://lftp.yar.ru/ "Le site de lftp") et son utilisation en nous limitant au mode interactif, qui permet de naviguer au sein de l'arborescence distante et des dossiers locaux, de transférer des fichiers... le tout de manière «&nbsp;visuelle&nbsp;». lftp permet cependant de se passer de ce mode interactif grâce à l'option _-e_ qui prend pour argument une ou plusieurs commandes, ce qui permet de lancer en une seule commande de multiples tâches.

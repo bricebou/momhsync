@@ -6,10 +6,13 @@ taxonomy:
         - Linux
     tag:
         - keybinding
-        - wifi
         - touchpad
         - Xfce
         - 'ASUS F200M'
+        - wifi
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Sur mon netbook ASUS F200M, je n'ai rencontré aucun souci à l'installation de la dernière version de [Xubuntu](http://xubuntu.org/), la 14.04, et tout semble fonctionner parfaitement _out of the box_.

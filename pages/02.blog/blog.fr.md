@@ -1,7 +1,7 @@
 ---
 title: Blog
-recaptchacontact:
-    enabled: false
+metadata:
+    description: 'Ce blog se veut un aide-mémoire avant tout personnel concernant essentiellement l''installation et la configuration de divers logiciels sous Linux.'
 content:
     items:
         - '@self.children'
@@ -11,5 +11,10 @@ content:
         dir: desc
     pagination: true
     url_taxonomy_filters: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
+recaptchacontact:
+    enabled: false
 ---
 

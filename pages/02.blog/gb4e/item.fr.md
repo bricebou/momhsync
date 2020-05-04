@@ -9,6 +9,9 @@ taxonomy:
         - linguistique
         - package
         - syntaxe
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Le _[package gb4e](gb4e.zip)_ permet de présenter les exemples sous forme de listes ordonnées à la gestion fine, la possibilité d'indiquer un «&#8239;jugement&#8239;» et celle d'utiliser les commandes _\label_ et _\ref_.

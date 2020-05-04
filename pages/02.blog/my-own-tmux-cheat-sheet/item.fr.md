@@ -4,8 +4,11 @@ taxonomy:
     category:
         - Linux
     tag:
-        - console
         - keybinding
+        - console
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Il s'agit ici pour moi de réunir en un lien unique, clairement identifiable &mdash; pour moi du moins &mdash; un certain nombre de ressources consacrées à Tmux, collant le plus possible à mes besoins et à mon usage de ce «&#8239;multiplexeur de terminaux&#8239;».

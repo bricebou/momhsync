@@ -10,6 +10,9 @@ taxonomy:
         - package
         - phonétique
         - phonologie
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 tikz/pgf permet de réaliser des graphiques d'une très grande complexité comme vous pouvez le constater en vous rendant sur [cette page](http://www.texample.net/tikz/examples/). Je me propose de donner ici un aperçu de l'utilisation – très basique – que j'en ai faite : générer des modèles et grilles rythmiques pour un dossier de phonologie.

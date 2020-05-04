@@ -6,9 +6,12 @@ taxonomy:
         - Linux
     tag:
         - keybinding
-        - wifi
-        - 'ASUS F200M'
         - Xfce
+        - 'ASUS F200M'
+        - wifi
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Dans un [article précédent](/blog/netbook-keybindings), j'avais présenté un court script permettant d'activer et de désactiver le Wifi sur mon netbook ASUS F200M sous Xubuntu avec les touches "fonctions".

@@ -8,5 +8,8 @@ taxonomy:
         - crépuscule
         - Roche-de-Vic
         - Corrèze
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 

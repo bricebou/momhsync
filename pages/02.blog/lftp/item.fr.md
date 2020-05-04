@@ -8,6 +8,9 @@ taxonomy:
         - console
         - ftp
         - lftp
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 [lftp](http://lftp.yar.ru/ "Site “officiel” de lftp") est un «&#8239;_programme en ligne de commande de transfert de fichiers pour Unix et systèmes d'exploitation apparentés […] écrit par Alexander Lukyanov et […] distribué sous Licence publique générale GNU._&#8239;» [[1]](http://fr.wikipedia.org/wiki/Lftp "lftp sur Wikipedia") Parmi ses très nombreuses fonctionnalités, lftp permet de «&#8239;_répliquer récursivement une arborescence entière de répertoires, l'enregistrement de signets d'adresses et la capacité à reprendre un téléchargement arrêté_&#8239;». De plus, lftp «&#8239;_peut entièrement s'insérer dans un script au lieu d'être utilisé de manière interactive par l'utilisateur._&#8239;»

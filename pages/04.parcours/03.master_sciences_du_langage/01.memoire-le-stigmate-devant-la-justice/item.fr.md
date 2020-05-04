@@ -3,6 +3,9 @@ title: 'Mémoire : Le stigmate devant la justice'
 media_order: M2_Memoire.pdf
 date: '20-04-2020 20:08'
 visible: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Ce mémoire de Master Recherche a été l'occasion pour moi d'associer travail de recherche et centres d'intérêts. J'ai donc décidé de travailler à partir d'une séquence de _12e chambre, instants d'audience_ de Raymond Depardon dans laquelle un homme se trouve être «&nbsp;stigmatisé&nbsp;», satisfaisant ainsi mon goût pour le cinéma et mon intérêt pour les travaux d'Erving Goffman et plus généralement pour la sociologie (grande utilité de _Surveiller et punir_ de Michel Foucault).

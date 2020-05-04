@@ -2,6 +2,9 @@
 title: 'Histoire de l''édition : la censure en France... de la censure « officielle » à la « censure invisible »'
 media_order: M2E_Censure.pdf
 visible: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Dans le cadre du cours de Gérard Gonfroy consacré à l'Histoire de l'édition, les étudiants (indiviuellement ou en groupes) devaient réaliser un dossier avant de le présenter devant la promotion. Parmi les sujets proposés, j'ai choisi de travailler sur la censure en France de la III<sup>e</sup> République à nos jours, sujet classique si l'on peut dire mais que j'ai traité de manière très personnelle, m'inspirant de la « critique des médias » qui m'intéresse particulièrement.

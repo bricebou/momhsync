@@ -10,6 +10,9 @@ taxonomy:
         - Xfce
         - 'ASUS F200M'
         - PulseAudio
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Sous Lubuntu 18.04, presque tous les réglages accessibles via la touche `Fn` de mon Asus F200M sont fonctionnels «&nbsp;_out of scratch_&nbsp;» à l'exception de celui (dés)activant le touchpad et d'un léger souci sur les touche de volume.

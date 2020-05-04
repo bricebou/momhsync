@@ -3,6 +3,9 @@ title: "Analyse du discours\_: les\_«\_institutions totalitaires\_» : <i>Asile
 media_order: M2_Discours.pdf
 date: '16-04-2020 20:08'
 visible: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Ce dossier, sanctionnant le séminaire d'Analyse du discours, est assez particulier et reflète bien mes centres d'intérêts, à savoir l'histoire et plus particulièrement ce qui concerne la Seconde guerre mondiale, les régimes fascistes et la Shoah, ainsi que la littérature et le cinéma.

@@ -5,8 +5,11 @@ taxonomy:
     category:
         - Linux
     tag:
-        - bash
         - console
+        - bash
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Afin de faciliter l'écoute de certaines radio en streaming, et surtout sans utiliser un navigateur web, de plus en plus gourmand en ressources, j'utilise désormais un petit script bash qui utilise `mplayer`.

@@ -5,9 +5,12 @@ taxonomy:
     category:
         - Linux
     tag:
+        - torrent
         - console
         - 'Raspberry Pi'
-        - torrent
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Grâce à un petit utilitaire en Python, [yifi, initialement écrit par vitamin c / akhilmaskerie](https://github.com/akhilmaskeri/yifi), il est possible de découvrir les dernières releases proposées par YIFY / YTS, de faire des recherches et surtout de télécharger les fichiers .torrent ou .magnet pour les télécharger ensuite avec votre client Bittorent préféré (dans mon cas désormais, transmission-daemon tourne sur mon NAS en remplacement de rtorrent).

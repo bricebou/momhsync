@@ -7,6 +7,9 @@ taxonomy:
     tag:
         - console
         - git
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 recaptchacontact:
     enabled: false
 ---

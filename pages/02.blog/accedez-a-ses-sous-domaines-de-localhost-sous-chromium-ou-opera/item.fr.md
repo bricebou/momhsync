@@ -6,8 +6,11 @@ taxonomy:
         - Linux
         - Windows
     tag:
-        - réseau
         - dev
+        - réseau
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Sous Chromium ou Opera, sous Xubuntu 15.04, il m'était impossible d'accéder à mes sous-domaines de localhost.

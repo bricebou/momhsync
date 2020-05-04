@@ -3,6 +3,9 @@ title: 'Mémoire : Analyse conversationnelle d''une expérience scientifique en 
 media_order: M1_Memoire.pdf
 date: '19-04-2020 20:06'
 visible: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Pour mon mémoire de Maîtrise de Sciences du langage, j'ai travaillé –&nbsp;sous la direction d'Anne Croll&nbsp;– sur les échanges tenus au cours d'une «&nbsp;expérience scientifique&nbsp;» en classe de maternelle (analyse conversationnelle et analyse du discours).

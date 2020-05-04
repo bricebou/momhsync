@@ -8,5 +8,8 @@ taxonomy:
         - forêt
         - crépuscule
         - ếtang
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 

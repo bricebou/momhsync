@@ -7,6 +7,9 @@ taxonomy:
     tag:
         - mpd
         - console
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 MPD (Music Player Daemon) est un lecteur audio fonctionnant selon l'architecture client-serveur. Nous n'allons aborder ici que l'aspect serveur, pris en charge par MPD, et verrons ultérieurement le côté client (en l'occurrence [ncmpcpp](/blog/ncmpcpp "ncmpcpp, un client mpd complet")). Si MPD peut apparaître au premier abord assez complexe, il n'en demeure pas moins un outil extrêmement intéressant ne serait-ce que pour sa légèreté et la flexibilité qu'un tel système propose. Sans chercher à pénétrer trop avant dans les arcanes de sa configuration, il est possible d'obtenir un outil fonctionnel très rapidement et finalement assez facilement. La preuve…

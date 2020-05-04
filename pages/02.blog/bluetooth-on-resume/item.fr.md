@@ -7,6 +7,9 @@ taxonomy:
     tag:
         - 'ASUS F200M'
         - bluetooth
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Sous Lubuntu 18.04, il m'était impossible de me re-connecter en Bluetooth à mon ampli Hi-Fi au retour de la veille.    

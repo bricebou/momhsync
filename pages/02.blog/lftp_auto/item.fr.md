@@ -8,6 +8,9 @@ taxonomy:
         - console
         - ftp
         - lftp
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Après avoir présenté le [mode interactif de lftp](/blog/lftp "Présentation de lftp et utilisation de son mode interactif"), client FTP en ligne de commande, et exploré son [utilisation en ligne de commande](/blog/lftp_non_interactive "Utiliser lftp en ligne de commande"), nous allons maintenant voir qu'il est possible d'automatiser les transferts, que ce soit par le biais d'alias bash ou grâce à des scripts propres à lftp. En effet, lftp permet d'appeler des scripts extrêmement simples à écrire dans la mesure où chaque ligne correspond à une instruction.

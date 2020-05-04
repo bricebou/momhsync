@@ -3,6 +3,9 @@ title: 'Sémantique - Pragmatique : les expressifs'
 media_order: M2_Semantique.pdf
 date: '20-04-2020 20:08'
 visible: true
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Dans le cadre de ce séminaire animé par Orin Percus, je me suis intéressé aux _expressifs_, étudiés par [Christopher Potts](http://www.stanford.edu/~cgpotts/). Après lecture de son article _The expressive dimension_ (disponible [ici [en][pdf]](http://www.stanford.edu/~cgpotts/papers/potts-expressives06.pdf)), je me suis essayé à proposer une analyse des _expressifs_ de la langue française tels «&nbsp;putain&nbsp;», «&nbsp;maudit&nbsp;»…

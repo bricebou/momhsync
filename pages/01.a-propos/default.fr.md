@@ -5,6 +5,9 @@ process:
     twig: true
 twig_first: true
 visible: false
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 _My Own Memory Hole_ se veut une sorte de «&nbsp;vitrine&nbsp;» de mon parcours et de mon expérience mais aussi de mes centres d'intérêt, à travers la mise à disposition de l'ensemble des dossiers et des mémoires que j'ai réalisés au cours de [mes études](/parcours) ainsi que par le biais d'articles consacrés à diverses applications des distributions [GNU/Linux](/blog/category:Linux) que j'utilise, (Debian ou Debian based essentiellement), à [LaTeX](/blog/category:LaTeX) &ndas;&nbsp;et plus particulièrement aux packages utiles lorsque l'on suit un cursus de Sciences du langage&nbsp;&ndash; ainsi qu'à des outils web, entre autres choses...

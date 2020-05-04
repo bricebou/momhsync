@@ -6,8 +6,11 @@ taxonomy:
     category:
         - Linux
     tag:
-        - console
         - personnalisation
+        - console
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Bien que totalement inutile – donc totalement indispensable – votre terminal peut vous parler ou du moins afficher un air un peu moins triste lorsque vous le lancez...     

@@ -9,6 +9,9 @@ taxonomy:
         - dev
         - réseau
         - Firefox
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 recaptchacontact:
     enabled: false
 ---

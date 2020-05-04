@@ -7,6 +7,9 @@ taxonomy:
     tag:
         - keybinding
         - LXDE
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 recaptchacontact:
     enabled: false
 ---

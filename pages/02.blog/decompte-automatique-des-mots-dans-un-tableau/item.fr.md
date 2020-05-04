@@ -8,6 +8,9 @@ taxonomy:
     tag:
         - TeX
         - tableau
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Pour mon mémoire de Master Recherche Sciences du langage, il me fallait, à partir d'une transcription, faire une analyse du capital verbal, ce qui impliquait compter les mots de chaque intervention. N'étant plus à convaincre de la puissance de LaTeX, je me suis dit que ce devait être possible d'automatiser une telle tâche.

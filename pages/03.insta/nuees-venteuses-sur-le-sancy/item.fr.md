@@ -9,5 +9,8 @@ taxonomy:
         - nuage
         - 'Puy de Sancy'
         - vent
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
