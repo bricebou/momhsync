@@ -2,6 +2,11 @@
 title: 'ncmpcpp, un client pour mpd'
 media_order: config_ncmpcpp.txt
 date: '04-09-2011 00:00'
+taxonomy:
+    category:
+        - Linux
+    tag:
+        - mpd
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
