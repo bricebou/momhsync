@@ -53,17 +53,17 @@ Pour avoir plus d'informations sur un film&nbsp;:
 
 ```bash
 $ yify -id 16497 --details
-title  &nbsp;: American Masters Jimi Hendrix: Hear My Train a Comin' (2013)
-year   &nbsp;: 2013
-rating &nbsp;: 7.7
-runtime&nbsp;: 0 min
-lang   &nbsp;: English
-genres &nbsp;: Biography,Documentary
-mpa    &nbsp;: 
-quality&nbsp;: ['720p']
-descr  &nbsp;:  Jimi Hendrix was the greatest single rock star of it's era and
+title : American Masters Jimi Hendrix: Hear My Train a Comin' (2013)
+year : 2013
+rating : 7.7
+runtime : 0 min
+lang : English
+genres : Biography,Documentary
+mpa : 
+quality : ['720p']
+descr :  Jimi Hendrix was the greatest single rock star of it's era and
       remains so today. No one before or since has come [... snap ...]
-imdb_id&nbsp;: tt3181314
+imdb_id : tt3181314
 ```
 
 Pour télécharger le torrent ou le magnet (lien copié dans un fichier)&nbsp;:
