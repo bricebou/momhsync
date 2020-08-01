@@ -29,7 +29,7 @@ Nous avons désormais accès à la commande `yify` qui renvoie les dernières so
 $ yify
 16500 Ordinary Love
 16499 Jimmy P.
-16497 American Masters Jimi Hendrix: Hear My Train a Comin&#96;
+16497 American Masters Jimi Hendrix: Hear My Train a Comin'
 16496 Fantastic Return to Oz
 16495 Batman: Return of the Caped Crusaders
 16494 Cardcaptor Sakura: The Movie
@@ -53,14 +53,14 @@ Pour avoir plus d'informations sur un film&nbsp;:
 
 ```bash
 $ yify -id 16497 --details
-title : American Masters Jimi Hendrix: Hear My Train a Comin&#96; (2013)
+title : American Masters Jimi Hendrix: Hear My Train a Comin' (2013)
 year : 2013
 rating : 7.7
 runtime : 0 min
 lang : English
 genres : Biography,Documentary
 mpa : 
-quality : [&#96;720p&#96;]
+quality : ['720p']
 descr :  Jimi Hendrix was the greatest single rock star of it's era and
       remains so today. No one before or since has come [... snap ...]
 imdb_id : tt3181314
