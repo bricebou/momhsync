@@ -53,7 +53,7 @@ Pour avoir plus d'informations sur un film&nbsp;:
 
 ```bash
 $ yify -id 16497 --details
-title : American Masters Jimi Hendrix: Hear My Train a Comin' (2013)
+title : American Masters Jimi Hendrix: Hear My Train a Comin\' (2013)
 year : 2013
 rating : 7.7
 runtime : 0 min
