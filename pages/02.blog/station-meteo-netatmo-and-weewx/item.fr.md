@@ -1,6 +1,12 @@
 ---
 title: 'Station météo Netatmo & WeeWX'
 date: '03-09-2020 09:16'
+taxonomy:
+    category:
+        - Linux
+    tag:
+        - 'Raspberry Pi'
+        - météo
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
