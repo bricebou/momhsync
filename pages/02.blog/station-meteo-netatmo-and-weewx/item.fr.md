@@ -71,6 +71,23 @@ On s'assure que nos identifiants Netatmo sont bien pris en compte et on bascule,
 database = archive_mysql
 ```
 
+On crée une base de données avec les mêmes identifiants que ceux que nous avons indiqués dans la sous-section `[[archive_mysql]]` de la secion `[Databases]`, par défaut&nbsp;:
+
+```
+    # MySQL
+    [[archive_mysql]]
+        database_name = weewx
+        database_type = MySQL
+```
+
+```bash
+$ sudo mysql -u root -p
+```
+
+```sql
+MariaDB [(none)]> CREATE DATABASE weewx_limoges_dubrac;
+```
+
 Enfin, on fait en sorte que WeeWX soit lancé au démarrage comme un service :
 
 ```bash
