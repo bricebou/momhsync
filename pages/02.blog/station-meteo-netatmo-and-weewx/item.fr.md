@@ -85,7 +85,10 @@ $ sudo mysql -u root -p
 ```
 
 ```sql
-MariaDB [(none)]> CREATE DATABASE weewx_limoges_dubrac;
+MariaDB [(none)]> CREATE DATABASE weewx;
+MariaDB [(none)]> CREATE USER 'weewx'@localhost IDENTIFIED BY 'weewx';
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON weewx.* TO 'weewx'@localhost;
+MariaDB [(none)]> FLUSH PRIVILEGES;
 ```
 
 Enfin, on fait en sorte que WeeWX soit lancé au démarrage comme un service :
