@@ -15,7 +15,9 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
-Le pilote Netatmo pour WeeWX (https://github.com/matthewwall/weewx-netatmo) n'est pas compatible avec la version 4 de WeeWX...
+Dans le cadre de la "digitalisation" de [_La Sculpture : les Pluies_](http://patrickdubrac.fr/-La-Sculpture-les-Pluies-) de Patrick Dubrac, nous cherchons à aller au-delà de ce que nous avons mis en place avec _Le Calendrier des pluies_, mis à jour mensuellement à partir des données météorologiques quotidiennes. D'où l'idée 
+
+Le pilote Netatmo pour WeeWX ([https://github.com/matthewwall/weewx-netatmo](https://github.com/matthewwall/weewx-netatmo)) n'est pas compatible avec la version 4 de WeeWX...
 Donc on se reporte sur la dernière des versions 3 de WeeWX disponibles, la 3.9.2&nbsp;:
 
 ```bash
