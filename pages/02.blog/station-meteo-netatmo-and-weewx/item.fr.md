@@ -1,6 +1,9 @@
 ---
 title: 'Station météo Netatmo & WeeWX'
 date: '03-09-2020 09:16'
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 content:
     items: '- ''@self.children'''
     limit: '5'
@@ -9,12 +12,9 @@ content:
         dir: desc
     pagination: '1'
     url_taxonomy_filters: '1'
-twitterenable: true
-twittercardoptions: summary
-facebookenable: true
 ---
 
-Dans le cadre de la "digitalisation" de [_La Sculpture : les Pluies_](http://patrickdubrac.fr/-La-Sculpture-les-Pluies-) de Patrick Dubrac, nous cherchons à aller au-delà de ce que nous avons mis en place avec _Le Calendrier des pluies_, mis à jour mensuellement à partir des données météorologiques quotidiennes. D'où l'idée de développer un prototype associant [une station météo Netatmo](https://www.netatmo.com/fr-fr/weather/weatherstation) à un Raspberry Pi sur lequel serait installé [WeeWX](http://weewx.com/), un petit programme en Python qui permet d'interagir avec de multiples modèles de stations météo, de publier les données sur de multiples sites, de conserver les données dans des bases de données...
+Dans le cadre de la «digitalisation» de [_La Sculpture : les Pluies_](http://patrickdubrac.fr/-La-Sculpture-les-Pluies-) de Patrick Dubrac, nous cherchons à aller au-delà de ce que nous avons mis en place avec _Le Calendrier des pluies_, mis à jour mensuellement à partir des données météorologiques quotidiennes. D'où l'idée de développer un prototype associant [une station météo Netatmo](https://www.netatmo.com/fr-fr/weather/weatherstation) à un Raspberry Pi sur lequel serait installé [WeeWX](http://weewx.com/), un petit programme en Python qui permet d'interagir avec de multiples modèles de stations météo, de publier les données sur de multiples sites, de conserver les données dans des bases de données...
 
 Cependant, le pilote pour les stations Netatmo ([https://github.com/matthewwall/weewx-netatmo](https://github.com/matthewwall/weewx-netatmo)) n'est pas compatible avec la version 4 de WeeWX... On bascule donc sur la dernière des versions 3 de WeeWX disponibles, la 3.9.2&nbsp;:
 
