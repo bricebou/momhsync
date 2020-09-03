@@ -9,7 +9,7 @@ facebookenable: true
 Le pilote Netatmo pour WeeWX (https://github.com/matthewwall/weewx-netatmo) n'est pas compatible avec la version 4 de WeeWX...
 Donc on se reporte sur la dernière des versions 3 de WeeWX disponibles, la 3.9.2&nbsp;:
 
-```
+```term
 $ wget http://weewx.com/downloads/released_versions/weewx-3.9.2.tar.gz
 ```
 
