@@ -12,13 +12,13 @@ form:
             validate:
                 required: true
         email:
-            label: Email
+            label: email
             placeholder: 'Votre adrese email'
             type: email
             validate:
                 required: true
         message:
-            label: Message
+            label: message
             placeholder: 'Saisissez votre message'
             type: textarea
             rows: 6
