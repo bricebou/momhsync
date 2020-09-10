@@ -1,11 +1,17 @@
 ---
 title: Insta
-recaptchacontact:
-    enabled: false
+taxonomy:
+    instatag:
+        - Obi
+        - lac
+        - 'Pont-à-l''Âge'
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 content:
     items:
         - '@self.children'
-    limit: 10
+    limit: 5
     order:
         by: date
         dir: desc
