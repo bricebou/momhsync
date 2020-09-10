@@ -10,6 +10,9 @@ taxonomy:
         - package
         - phonétique
         - phonologie
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Le package _tipa_ vous permet d'insérer au sein d'un document les symboles de l'alphabet phonétique international (API). Je vous en propose une présentation générale, peu poussée.

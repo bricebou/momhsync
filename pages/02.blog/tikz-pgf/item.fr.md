@@ -10,6 +10,9 @@ taxonomy:
         - package
         - phonétique
         - phonologie
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 tikz/pgf permet de réaliser des graphiques d'une très grande complexité comme vous pouvez le constater en vous rendant sur [cette page](http://www.texample.net/tikz/examples/). Je me propose de donner ici un aperçu de l'utilisation – très basique – que j'en ai faite : générer des modèles et grilles rythmiques pour un dossier de phonologie.
@@ -25,6 +28,7 @@ N'hésitez pas à vous plonger dans la documentation – plus que conséquente 
 Avant de se lancer, mieux vaut avoir une idée précise de ce que l'on veut faire : en effet, la création du graphique passe par la déclaration de point, de coordonnées, et peut s'avérer longue et fastidieuse.
 
 Voici un exemple de grille rythmique (utilisation du package [tipa](/blog/tipa_vowel))&nbsp;:
+
 ```latex
 \newcommand{\sux}[1]{${\rm \stackrel{\textstyle x}{\raisebox{0ex}{#1}}}$}
   

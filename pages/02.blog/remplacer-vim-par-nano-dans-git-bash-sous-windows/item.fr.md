@@ -5,9 +5,13 @@ taxonomy:
     category:
         - Windows
     tag:
-        - terminal
-        - git
         - console
+        - git
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
+recaptchacontact:
+    enabled: false
 ---
 
 Vous êtes linuxien, incapable de comprendre __vim__ (hormis le _:quit_...) et utilisez Git Bash sous Windows qui propose cet éditeur par défaut&nbsp;? Faites comme moi, passez à __nano__&nbsp;!
@@ -39,19 +43,19 @@ Vous pouvez donc facilement ajouter le dossier où vous avez enregistré le fich
 
 Une fois cela fait, relancer Git Bash s'il était ouvert et vous devriez pouvoir lancer la commande nano directement&nbsp;:
 
-```bash
-$ nano
+```shell
+nano
 ```
 
 Si ce n'est pas le cas et que vous avez modifié le Path, ouvrez une invite de commande (Ctrl+R puis tapez cmd) et vérifiez la valeur de PATH&nbsp;:
 
-```bash
-> PATH
+```shell
+PATH
 ```
 
 Si votre répertoire n'apparaît pas dans la liste, lancez la commande&nbsp;:
 
-```bash
+```shell
 SET PATH=%PATH%;C:\VOTRE\REPERTOIRE
 ```
 
@@ -61,7 +65,7 @@ Relancez Git Bash et testez à nouveau de lancer nano.
 
 Vous devez configurer Git pour qu'il appelle nano plutôt que vim pour les _commits_&nbsp;:
 ```bash
-$ git config --global core.editor "nano"
+git config --global core.editor "nano"
 ```
 
 Lors de votre prochain _commit_ vous devriez donc bénéficier de nano.

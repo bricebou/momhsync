@@ -7,6 +7,9 @@ taxonomy:
     tag:
         - TeX
         - macro
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Un environnement permettant de créer un bloc de texte dont on peut faire varier la largeur avec une barre verticale à gauche à l'épaisseur modififable bien évidemment.

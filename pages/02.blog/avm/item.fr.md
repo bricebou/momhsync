@@ -8,10 +8,13 @@ taxonomy:
     tag:
         - linguistique
         - package
+        - structure
         - phonétique
         - phonologie
-        - structure
         - tipa
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Ce package permet de réaliser des structures de traits, de la plus simple à la plus complexe.

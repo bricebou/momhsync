@@ -5,11 +5,18 @@ taxonomy:
     category:
         - Linux
     tag:
-        - console
         - personnalisation
+        - console
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 ---
 
 Vous êtes du genre à oublier de souhaiter un bon anniversaire à vos amis ou parents&nbsp;? Ce ne sera plus le cas désormais grâce à un petit logiciel permettant d'afficher dans un terminal virtuel les anniversaires à venir&nbsp;: _birthday_.
+
+
+
+===
 
 Commençons par installer _birthday_&nbsp;:
 
@@ -74,4 +81,11 @@ Pour plus d'options et en savoir plus&nbsp;:
 
 ```bash
 $ man birthday
+```
+
+À noter que l'on peut concilier _birthday_ et _cowsay_ ([voir cet article](/blog/un-terminal-accueillant-cest-possible-avec-cowsay-et-fortune))&nbsp;:
+
+```bash
+$ birthday -W 50 | cowsay -W 30 -f tux.cow
+$ birthday -c -d 3 | cowsay -W 80 -f tux.cow
 ```
