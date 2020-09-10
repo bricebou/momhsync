@@ -1,0 +1,15 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+  <section id="body-wrapper" class="section">
+    <section class="container {{ grid_size }}">
+    	<div class="columns">
+    		<div class="column col-9 col-mx-auto col-sm-12">
+    			{{ page.content|raw }}
+
+    			{% include 'partials/tntsearch.html.twig' with { in_page: true }%}
+    		</div>
+    	</div>
+    </section>
+  </section>
+{% endblock %}

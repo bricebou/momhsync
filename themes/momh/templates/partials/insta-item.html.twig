@@ -1,0 +1,107 @@
+<div class="columns">
+  <div class="column col-4 col-sm-12 published-metadata">
+    <p>{% include 'partials/blog/date.html.twig' with {'moment': page.date} %}</p>
+
+    <p>{% include 'partials/blog/taxonomy.html.twig' with {'taxon': 'instatag', 'base_url': '/insta'} %}</p>
+
+    <div>
+      {{ page.content }}
+    </div>
+  </div>
+
+  <div class="column col-8 col-sm-12">
+    
+    {% set name = page.header.media_order|split(',')|first %}
+    {% include "partials/insta/insta-media.html.twig" with {'type': page.media[name].type, 'filename': name } %}
+    {% set mlength = page.header.media_order|split(',')|length - 1 %}
+
+    {% if mlength == 1  %}
+      {% set name = page.header.media_order|split(',')|slice(1)|first %}
+      {% include "partials/insta/insta-media.html.twig" with {'type': page.media[name].type, 'filename': name } %}
+    {% elseif mlength == 4 %}
+      <div class="columns insta-columns">
+        {% for item in page.header.media_order|split(',')|slice(1,3) %}
+          <div class="column col-4">
+           {% include "partials/insta/insta-media.html.twig" with {'type': page.media[item].type, 'filename': item } %}
+          </div>
+        {% endfor %}
+      </div>
+      {% set name = page.header.media_order|split(',')|last %}
+      {% include "partials/insta/insta-media.html.twig" with {'type': page.media[name].type, 'filename': name } %}
+    {% elseif (mlength % 3 == 0) %}
+      <div class="columns insta-columns">
+        {% for item in page.header.media_order|split(',')|slice(1) %}
+          <div class="column col-4">
+           {% include "partials/insta/insta-media.html.twig" with {'type': page.media[item].type, 'filename': item } %}
+          </div>
+        {% endfor %}
+      </div>
+    {% elseif (mlength % 3 == 1) %}
+
+      <div class="columns insta-columns">
+        {% set rec = "1" %}
+        {% for item in page.header.media_order|split(',')|slice(rec,(mlength / 3)|round(0,'floor') * 3) %}
+          <div class="column col-4">
+           {% include "partials/insta/insta-media.html.twig" with {'type': page.media[item].type, 'filename': item } %}
+          </div>
+          {% set rec = rec + loop.index0 %}
+        {% endfor %}
+      </div> 
+      {% set name = page.header.media_order|split(',')|last %}
+      {% include "partials/insta/insta-media.html.twig" with {'type': page.media[name].type, 'filename': name } %}
+    {% elseif (mlength % 3 == 2) %}
+      <div class="columns insta-columns">
+        {% set rec = "1" %}
+        {% for item in page.header.media_order|split(',')|slice(rec,(mlength / 3)|round(0,'floor') * 3) %}
+          <div class="column col-4">
+           {% include "partials/insta/insta-media.html.twig" with {'type': page.media[item].type, 'filename': item } %}
+          </div>
+          {% set rec = rec + loop.index0 %}
+        {% endfor %}
+        {% for item in page.header.media_order|split(',')|slice(rec,2) %}
+          <div class="column col-6">
+           {% include "partials/insta/insta-media.html.twig" with {'type': page.media[item].type, 'filename': item } %}
+          </div>
+        {% endfor %}
+      </div> 
+    {% elseif (mlength % 2 == 0) %}
+      <div class="columns insta-columns">
+        {% for item in page.header.media_order|split(',')|slice(1) %}
+          <div class="column col-6">
+           {% include "partials/insta/insta-media.html.twig" with {'type': page.media[item].type, 'filename': item } %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+
+    {# {% include 'partials/insta/insta-image.html.twig' with {'image': page.media.images|first  } %}
+    {% if page.media.images|slice(1)|length() == 1 %}
+      {% include 'partials/insta/insta-image.html.twig' with {'image': page.media.images|slice(1,1)|first  } %}
+    {% endif %}
+    {% if page.media.images|slice(1)|length() is divisibleby(3) %}
+      <div class="columns">
+        {% for im in page.media.images|slice(1) %}
+          <div class="column col-4">
+            {% set image = page.media.images|slice(loop.index,1)|first %}
+            {% include 'partials/insta/insta-image.html.twig' %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if page.media.images|slice(1)|length() is divisibleby(2) %}
+      <div class="columns">
+        {% for im in page.media.images|slice(1) %}
+          <div class="column col-6">
+            {% set image = page.media.images|slice(loop.index,1)|first %}
+            {% include 'partials/insta/insta-image.html.twig' %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %} #}
+  </div>
+
+  <div class="column col-8 col-ml-auto">
+    {% include 'partials/insta/insta-coordinates.html.twig' %}
+  </div>
+</div>

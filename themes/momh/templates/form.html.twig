@@ -1,0 +1,29 @@
+{% extends 'partials/base.html.twig' %}
+
+{# {% block content %}
+
+    {{ content|raw }}
+    {% include "forms/form.html.twig" %}
+
+{% endblock %} #}
+
+{% block body %}
+    
+  <section id="body-wrapper" class="container {{ grid_size }} section {{ type }}-listing">
+  	<div class="columns">
+  		<div class="col-12">
+  			<h1>{{ page.title }}</h1>
+
+  			<div class="columns">
+  				<div class="column col-4 col-sm-12">
+						{{ content|raw }}
+  				</div>
+
+  				<div class="column col-8 col-sm-12">
+						{% include "forms/form.html.twig" %}
+  				</div>
+  			</div>
+  		</div>
+    </div>
+  </section>
+{% endblock %}

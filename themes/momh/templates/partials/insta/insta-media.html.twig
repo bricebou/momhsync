@@ -1,0 +1,6 @@
+{% if type == 'image' %}
+	{{ page.media[filename].fixOrientation.lightbox().fixOrientation.cropZoom(1024,752).html(image.title, image.alt) }}
+{% endif %}
+{% if type == 'video' %}
+	{{ page.media[filename] }}
+{% endif %}
