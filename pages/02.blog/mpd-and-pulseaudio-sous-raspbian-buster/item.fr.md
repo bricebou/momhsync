@@ -1,7 +1,7 @@
 ---
 title: 'MPD, PulseAudio et Bluetooth sous Raspbian Buster'
-published: false
-date: '28-09-2020 20:36'
+published: true
+date: '29-09-2020 20:36'
 taxonomy:
     category:
         - Linux
