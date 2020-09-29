@@ -2,6 +2,9 @@
 title: 'CV - Brice Boucard'
 media_order: brice_boucard__cv.pdf
 date: '14-04-2020 22:07'
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 content:
     items: '@self.children'
     limit: '5'
@@ -10,9 +13,6 @@ content:
         dir: desc
     pagination: '1'
     url_taxonomy_filters: '1'
-twitterenable: true
-twittercardoptions: summary
-facebookenable: true
 ---
 
 <div class="cv-ec">
