@@ -1,7 +1,7 @@
 ---
 title: 'Gestion des DRM sous Raspbian Buster'
 published: true
-date: '29-09-2020 08:06'
+date: '28-09-2020 08:06'
 taxonomy:
     category:
         - Linux
