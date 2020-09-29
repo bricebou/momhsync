@@ -263,6 +263,10 @@ $ pacmd list-sinks
 
 De là, on peut configurer les sorties dans MPD&nbsp;:
 
+```shell
+$ sudo nano /etc/mpd.conf
+```
+
 ```
 audio_output {
         type            "pulse"
