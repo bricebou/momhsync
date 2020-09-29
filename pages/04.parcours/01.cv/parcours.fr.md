@@ -2,6 +2,14 @@
 title: 'CV - Brice Boucard'
 media_order: brice_boucard__cv.pdf
 date: '14-04-2020 22:07'
+content:
+    items: '@self.children'
+    limit: '5'
+    order:
+        by: date
+        dir: desc
+    pagination: '1'
+    url_taxonomy_filters: '1'
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
