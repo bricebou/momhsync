@@ -261,7 +261,7 @@ $ pacmd list-sinks
 	active port: <speaker-output>
 ```
 
-De là, on peut configurer les sorties dans MPD, &nbsp;:
+De là, on peut configurer les sorties dans MPD&nbsp;:
 
 ```
 audio_output {
