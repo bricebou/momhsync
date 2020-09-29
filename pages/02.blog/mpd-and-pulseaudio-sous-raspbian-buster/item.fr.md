@@ -9,6 +9,7 @@ taxonomy:
         - mpd
         - 'Raspberry Pi'
         - PulseAudio
+        - bluetooth
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
