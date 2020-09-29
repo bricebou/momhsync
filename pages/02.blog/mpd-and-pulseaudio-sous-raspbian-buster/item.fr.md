@@ -52,6 +52,18 @@ load-module module-switch-on-connect
 load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 # IP of localhost
 ```
 
+On tue PulseAudio&nbsp;:
+
+```shell
+$ pulseaudio -k
+```
+
+S'il ne redémarre pas tout seul, il suffit de lancer la commande&nbsp;:
+
+```shell
+$ pulseaudio -D
+```
+
 On veille à bien connecter notre enceinte Bluetooth via l'utilitaire en ligne de commande `bluetoothctl`&nbsp;: on commence par rechercher les périphériques disponibles (`scan on`), puis on lui accorde notre confiance (pas d'authentification nécessaire, `trust`) avant de faire l'appairage avec le bon device (`pair`) et de nous y connecter (`connect`)&bvsp;; on peut alors cesser la recherche (`scan off`)&nbsp;:
 
 ```shell
@@ -249,4 +261,27 @@ $ pacmd list-sinks
 	active port: <speaker-output>
 ```
 
-De là, on peut configure
+De là, on peut configurer les sorties dans MPD, &nbsp;:
+
+```
+audio_output {
+        type            "pulse"
+        name            "Tangent Ampster BT"
+        server          "127.0.0.1"            
+        sink            "bluez_sink.FC_58_FA_14_27_BC.a2dp_sink"       
+        mixer_type      "software"
+}
+audio_output {
+        type            "pulse"
+        name            "HDMI 1 Output"
+        server          "127.0.0.1"            
+        sink            "alsa_output.platform-bcm2835_audio.analog-mono"     
+        mixer_type      "software"
+}
+```
+
+On relance MPD et l'affaire est jouée&nbsp;:
+
+```shell
+$ sudo service mpd restart
+```
