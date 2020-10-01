@@ -11,7 +11,7 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
-Il s'agit ici pour moi de réunir en un lien unique, clairement identifiable &mdash; pour moi du moins &mdash; un certain nombre de ressources consacrées à Tmux, collant le plus possible à mes besoins et à mon usage de ce «&#8239;multiplexeur de terminaux&#8239;».
+Il s'agit ici pour moi de réunir en un lien unique, clairement identifiable &mdash; pour moi du moins &mdash; un certain nombre de ressources consacrées à Tmux, collant le plus possible à mes petits besoins et à mon usage limité de ce «&#8239;multiplexeur de terminaux&#8239;».
 
 ## Installation et préparation de base
 
