@@ -48,7 +48,11 @@ Avec cette configuration proposée par  Gregory Pakosz, le préfixe à utiliser 
 
 ## Copier-Coller
 
-Pour profiter pleinement du copier-coller, il convient d'installer le paquet `xclip`.
+Pour profiter pleinement du copier-coller, il convient d'installer le paquet `xclip` et de bien avoir dans le fichier `~/.tmux.conf.local` la ligne suivante&nbsp;:
+
+```
+tmux_conf_copy_to_os_clipboard=true
+```
 
 À la souris, il suffit de surligner le texte à copier et d'utiliser `Alt+w`.
 
