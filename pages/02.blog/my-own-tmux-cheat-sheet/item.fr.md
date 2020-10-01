@@ -31,24 +31,25 @@ cp .tmux/.tmux.conf.local .
 
 ```
 
-## Copier-Coller
-
-Pour profiter pleinement du copier-coller, il convient d'installer le paquet `xclip`.
-
-À la souris, il suffit de surligner le texte à copier et d'utiliser `Alt+w`.
-
-Sinon, au clavier, il faut commencer par utiliser `Ctrl+b [` pour entrer en mode copie, se rendre au début du texte à copier, appuyer sur `Espace`, se rendre à la fin et simplement appuyer sur `Entrée`.
-
-
 ## Configuration personnelle
 
 ...
 
 ## Raccourcis claviers
 
-`Ctrl+b "`&nbsp;: partager le panneau horizontalement      
-`Ctrl+b %`&nbsp;: partager le panneau verticalement      
-`Ctrl+b c`&nbsp;: créer un nouveau panneau     
-`Ctrl+b x`&nbsp;: détruire le panneau actif    
+Avec cette configuration proposée par  Gregory Pakosz, le préfixe à utiliser est soit `Ctrl+b`, celui par défaut de tmux, soit `Ctrl+a`.
 
-`Ctrl+b m`&nbsp;: (dés)activer le mode souris     
+`<prefix> "` ou `<prefix> -`&nbsp;: partager le panneau horizontalement      
+`<prefix> %` ou `<prefix> _`&nbsp;: partager le panneau verticalement      
+`<prefix> c`&nbsp;: créer un nouveau panneau     
+`<prefix> x`&nbsp;: détruire le panneau actif    
+
+`<prefix> m`&nbsp;: (dés)activer le mode souris     
+
+## Copier-Coller
+
+Pour profiter pleinement du copier-coller, il convient d'installer le paquet `xclip`.
+
+À la souris, il suffit de surligner le texte à copier et d'utiliser `Alt+w`.
+
+Sinon, au clavier, il faut commencer par utiliser `<prefix> [` pour entrer en mode copie, se rendre au début du texte à copier, appuyer sur `Espace`, se rendre à la fin et simplement appuyer sur `Entrée`.
