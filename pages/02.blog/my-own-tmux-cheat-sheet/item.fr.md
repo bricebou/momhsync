@@ -31,7 +31,14 @@ cp .tmux/.tmux.conf.local .
 
 ```
 
+## Copier-Coller
+
 Pour profiter pleinement du copier-coller, il convient d'installer le paquet `xclip`.
+
+À la souris, il suffit de surligner le texte à copier et d'utiliser `Alt+w`.
+
+Sinon, au clavier, il faut commencer par utiliser `Ctrl+b [` pour entrer en mode copie, se rendre au début du texte à copier, appuyer sur `Espace`, se rendre à la fin et simplement appuyer sur `Entrée`.
+
 
 ## Configuration personnelle
 
