@@ -1,6 +1,6 @@
 ---
 title: 'ncmpcpp, un client pour mpd'
-media_order: config_ncmpcpp.txt
+media_order: config.txt
 date: '04-09-2011 00:00'
 taxonomy:
     category:
@@ -72,4 +72,4 @@ Pensez à relancer mpd&nbsp;:
 sudo service mpd restart
 ```
 
-Un fichier de configuration est téléchargeable [ici](config_ncmpcpp.txt).
+Un fichier de configuration est téléchargeable [ici](config.txt).
