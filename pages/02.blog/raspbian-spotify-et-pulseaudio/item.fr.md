@@ -9,6 +9,9 @@ taxonomy:
         - 'Raspberry Pi'
         - PulseAudio
         - Spotify
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 content:
     items: '- ''@self.children'''
     limit: '5'
@@ -17,9 +20,6 @@ content:
         dir: desc
     pagination: '1'
     url_taxonomy_filters: '1'
-twitterenable: true
-twittercardoptions: summary
-facebookenable: true
 ---
 
 Il est possible d'utiliser son Raspberry Pi sous Raspbian comme client Spotify Connect, c'est-à-dire d'en faire une sorte de module de sortie audio, et ce grâce à [Raspotify](https://dtcooper.github.io/raspotify/).
@@ -43,9 +43,8 @@ sudo apt-get -y install raspotify
 
 Ensuite, depuis votre application Spotify, il suffit de sélectionner la sortie « Raspotify » dans les options proposées dans le menu accessible depuis l'icone dans le bas inférieur gauche de l'écran de lecture&nbsp;:
 
-![](spotify_select.jpeg)
-![](spotify_select_raspotify.jpeg)
-
+<img src="spotify_select.jpeg" alt="spotify select out" style="width:200px; float: left" />
+<img src="spotify_select_raspotify.jpeg" alt="spotify select out raspotify" style="width:200px; float: left" />
 
 ## Configuration
 
