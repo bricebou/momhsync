@@ -1,5 +1,6 @@
 ---
 title: 'Raspbian, Spotify et PulseAudio '
+media_order: spotify_select_raspotify.jpeg
 date: '03-10-2020 10:31'
 taxonomy:
     category:
