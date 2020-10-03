@@ -44,7 +44,7 @@ sudo apt-get -y install raspotify
 
 Ensuite, depuis votre application Spotify, il suffit de sélectionner la sortie « Raspotify » dans les options proposées dans le menu accessible depuis l'icone dans le bas inférieur gauche de l'écran de lecture&nbsp;:
 
-| ![](spotify_select.jpeg)  |  ![](spotify_select_raspotify.jpeg)  |
+| ![](spotify_select.jpeg) | ![](spotify_select_raspotify.jpeg) |
 
 
 ## Configuration
@@ -69,6 +69,10 @@ sudo chown -R raspotify:raspotify .pulse
 ```
 
 Il faut également éditer le fichier `/etc/asound.rc`&nbsp;:
+
+```shell
+sudo nano /etc/asound.rc
+```
 
 ```
 pcm.!default {
