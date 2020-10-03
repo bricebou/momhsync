@@ -1,6 +1,6 @@
 ---
 title: 'Raspbian, Spotify et PulseAudio '
-media_order: spotify_select_raspotify.jpeg
+media_order: 'spotify_select.jpeg,spotify_select_raspotify.jpeg'
 date: '03-10-2020 10:31'
 taxonomy:
     category:
@@ -42,11 +42,20 @@ sudo apt-get update
 sudo apt-get -y install raspotify
 ```
 
-Ensuite, depuis votre application Spotify, il suffit de sélectionner la sortie « Raspotify » dans les 
+Ensuite, depuis votre application Spotify, il suffit de sélectionner la sortie « Raspotify » dans les options proposées dans le menu accessible depuis l'icone dans le bas inférieur gauche de l'écran de lecture&nbsp;:
+
+| ![](spotify_select.jpeg)  |  ![](spotify_select_raspotify.jpeg)  |
+
 
 ## Configuration
 
 Raspotify est fonctionnel _out of the box_ mais, s'il en est besoin, il est possible de jouer sur certains paramètres dans le fichier `/etc/default/raspotify`.
+
+En cas de modification, il convient alors de relancer le service `raspotify`&nbsp;:
+
+```shell
+sudo service raspotify restart
+```
 
 ## Raspotify & PulseAudio
 
