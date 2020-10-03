@@ -7,6 +7,7 @@ taxonomy:
         - Linux
     tag:
         - 'Raspberry Pi'
+        - Spotify
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
