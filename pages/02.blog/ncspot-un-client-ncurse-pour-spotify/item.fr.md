@@ -1,6 +1,6 @@
 ---
 title: 'ncspot, un client ncurse pour Spotify'
-published: false
+published: true
 date: '03-10-2020 12:56'
 taxonomy:
     category:
