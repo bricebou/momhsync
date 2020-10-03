@@ -37,6 +37,9 @@ cargo install ncspot
 
 ## Usage et configuration
 
+Il suffit alors de lancer la commande `ncspot`.
+
+
 
 ## Scrobbling
 
