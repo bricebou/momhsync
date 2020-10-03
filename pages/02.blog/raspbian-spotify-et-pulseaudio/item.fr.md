@@ -46,6 +46,7 @@ Ensuite, depuis votre application Spotify, il suffit de sélectionner la sortie 
 <img src="/blog/raspbian-spotify-et-pulseaudio/spotify_select.jpeg" alt="spotify select out" style="width:200px; float: left; margin-right: 24px;" />
 <img src="/blog/raspbian-spotify-et-pulseaudio/spotify_select_raspotify.jpeg" alt="spotify select out raspotify" style="width:200px; float: left" />
 
+
 ## Configuration
 
 Raspotify est fonctionnel _out of the box_ mais, s'il en est besoin, il est possible de jouer sur certains paramètres dans le fichier `/etc/default/raspotify`.
