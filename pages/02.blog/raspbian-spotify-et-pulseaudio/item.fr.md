@@ -44,10 +44,9 @@ sudo apt-get -y install raspotify
 Ensuite, depuis votre application Spotify, il suffit de sélectionner la sortie « Raspotify » dans les options proposées dans le menu accessible depuis l'icone dans le bas inférieur gauche de l'écran de lecture&nbsp;:
 
 <div style="text-align: center;">
-<img src="/blog/raspbian-spotify-et-pulseaudio/spotify_select.jpeg" alt="spotify select out" style="width:200px; float: left; margin-right: 24px;" />
-<img src="/blog/raspbian-spotify-et-pulseaudio/spotify_select_raspotify.jpeg" alt="spotify select out raspotify" style="width:200px; float: left" />
+<img src="/blog/raspbian-spotify-et-pulseaudio/spotify_select.jpeg" alt="spotify select out" style="width:200px; margin-right: 24px;" />
+<img src="/blog/raspbian-spotify-et-pulseaudio/spotify_select_raspotify.jpeg" alt="spotify select out raspotify" style="width:200px;" />
 </div>
-<div style="clear:both"></div>
 
 ## Configuration
 
