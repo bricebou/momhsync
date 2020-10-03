@@ -37,20 +37,20 @@ cargo install ncspot
 
 ## Usage et configuration
 
-Il suffit alors de lancer la commande `ncspot` et l'on peut alors naviguer entre trois écrans grâce aux touches `F1`, `F2` et `F3`&nbsp;: playlist, recherche, bibliothèque.
+Il suffit alors de lancer la commande `ncspot` et l'on peut alors naviguer entre trois écrans grâce aux touches `F1`, `F2` et `F3`&nbsp;: queue, recherche, bibliothèque.
 
 Voici la liste des raccourcis clavier par défaut&nbsp;:
 
-* `?` show help screen
-* Navigate through the screens using the F-keys:
-  * `F1`: Queue
-    * `c` clears the entire queue
-    * `d` deletes the currently selected track
-    * `Ctrl-s` opens a dialog to save the queue to a playlist
-  * `F2`: Search
-  * `F3`: Library
-    * `d` deletes the currently selected playlist
-* Tracks and playlists can be played using `Return` and queued using `Space`
+* `?` : écran d'aide
+* `F1`: Queue
+    * `c` efface la file d'attente
+    * `d` efface la piste sélectionnée
+    * `Ctrl-s` permet de sauver la file d'attente en une playlist
+* `F2`: Recherche
+* `F3`: Bibliothèque
+    * `d` efface la playlist sélectionnée
+* `Return` joue la piste ou la playlist
+* `Space` ajoute la piste ou la playlist à la file d'attente
 * `.` will move to the currently playing track in the queue.
 * `s` will save, `d` will remove the currently selected track to/from your
   library
