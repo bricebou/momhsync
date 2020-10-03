@@ -37,40 +37,10 @@ cargo install ncspot
 
 ## Usage et configuration
 
-Il suffit alors de lancer la commande `ncspot` et l'on peut alors naviguer entre trois écrans grâce aux touches `F1`, `F2` et `F3`&nbsp;: queue, recherche, bibliothèque.
+Il suffit alors de lancer la commande `ncspot` et l'on peut alors naviguer entre trois écrans grâce aux touches `F1`, `F2` et `F3`&nbsp;: queue, recherche, bibliothèque.     
 
-Voici la liste des raccourcis clavier par défaut&nbsp;:
+Pour en savoir plus, il suffit d'accéder à l'écran d'aide avec la touche `?`.
 
-* `?` : écran d'aide
-* `F1`: Queue
-    * `c` efface la file d'attente
-    * `d` efface la piste sélectionnée
-    * `Ctrl-s` permet de sauver la file d'attente en une playlist
-* `F2`: Recherche
-* `F3`: Bibliothèque
-    * `d` efface la playlist sélectionnée
-* `Return` joue la piste ou la playlist
-* `Space` ajoute la piste ou la playlist à la file d'attente
-* `.` will move to the currently playing track in the queue.
-* `s` will save, `d` will remove the currently selected track to/from your
-  library
-* `o` will open a detail view or context menu for the selected item
-* `Shift-o` will open a context menu for the currently playing track
-* `a` will open the album view for the selected item
-* `A` will open the artist view for the selected item
-* `Backspace` closes the current view
-* `Shift-p` toggles playback of a track
-* `Shift-s` stops a track
-* `Shift-u` updates the library cache (tracks, artists, albums, playlists)
-* `<` and `>` play the previous or next track
-* `f` and `b` to seek forward or backward
-* `Shift-f` and `Shift-b` to seek forward or backward in steps of 10s
-* `-` and `+` decrease or increase the volume
-* `r` to toggle repeat mode
-* `z` to toggle shuffle playback
-* `q` quits ncspot
-* `x` copies a sharable URL of the song to the system clipboard
-* `Shift-x` copies a sharable URL of the currently selected item to the system clipboard
 
 ## Scrobbling
 
