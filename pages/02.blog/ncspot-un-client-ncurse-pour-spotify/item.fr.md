@@ -96,10 +96,10 @@ nano ~/.config/rescrobbled/config.toml
 ```toml
 lastfm-key = "Last.fm API key"
 lastfm-secret = "Last.fm API secret"
-listenbrainz-token = "ListenBrainz API token"
+#listenbrainz-token = "ListenBrainz API token"
 enable-notifications = false
 min-play-time = 0 # in seconds
-player-whitelist = [ "Player MPRIS identity" ] # if empty or ommitted, will allow all players
+player-whitelist = [ "ncspot" ] # if empty or ommitted, will allow all players
 ```
 
 Il faut ensuite lancer la commande `rescrobbled` alors que le lecteur ncspot fonctionne&nbsp;; il vous sera alors demander votre identifiant et votre mot de passe.     
