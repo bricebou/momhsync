@@ -43,7 +43,36 @@ Pour en savoir plus, il suffit d'accéder à l'écran d'aide avec la touche `?`.
 
 La configuration se fait dans le fichier `~/.config/ncspot/config.toml` avec a possibilité de définir soi-même des raccourcis clavier au sein d'une section `[keybindings]` et un thème au sein d'une section `[theme]` ([un générateur](https://ncspot-theme-generator.vaa.red) vous en facilite la création)&nbsp;:
 
+```toml
+backend = "pulseaudio"
 
+[saved_state]
+volume = 70
+repeat = "no"
+shuffle = true
+
+[keybindings]
+
+"Shift+p" = "pause"
+
+[theme]
+background = "#002B36"
+primary = "#FDF6E3"
+secondary = "#EEE8D5"
+title = "#859900"
+playing = "#002B36"
+playing_selected = "#D33682"
+playing_bg = "#D33682"
+highlight = "#CB4B16"
+highlight_bg = "#000000"
+error = "#FDF6E3"
+error_bg = "#DC322F"
+statusbar = "#000000"
+statusbar_progress = "#D33682"
+statusbar_bg = "#D33682"
+cmdline = "#2AA198"
+cmdline_bg = "#586E75"
+```
 
 
 ## Scrobbling
