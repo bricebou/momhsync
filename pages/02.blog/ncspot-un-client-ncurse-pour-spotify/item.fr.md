@@ -41,7 +41,10 @@ Il suffit alors de lancer la commande `ncspot` et l'on peut alors naviguer entre
 
 Pour en savoir plus, il suffit d'accéder à l'écran d'aide avec la touche `?`.
 
-La configuration se fait dans le fichier `~/.config/ncspot/config.toml`.
+La configuration se fait dans le fichier `~/.config/ncspot/config.toml` avec a possibilité de définir soi-même des raccourcis clavier au sein d'une section `[keybindings]` et un thème au sein d'une section `[theme]` ([un générateur](https://ncspot-theme-generator.vaa.red) vous en facilite la création)&nbsp;:
+
+
+
 
 ## Scrobbling
 
