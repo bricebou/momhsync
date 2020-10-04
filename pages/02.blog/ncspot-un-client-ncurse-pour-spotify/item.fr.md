@@ -93,7 +93,7 @@ mkdir ~/.config/rescrobbled/
 nano ~/.config/rescrobbled/config.toml
 ```
 
-```
+```toml
 lastfm-key = "Last.fm API key"
 lastfm-secret = "Last.fm API secret"
 listenbrainz-token = "ListenBrainz API token"
