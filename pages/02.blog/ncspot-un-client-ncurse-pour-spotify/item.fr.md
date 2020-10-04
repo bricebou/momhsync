@@ -13,7 +13,7 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
-_ncspot_ est un client ncurse pour Spotify écrit en Rust et hautement inspiré des clients ncmpc ou ncmpcpp pour MPD. 
+[_ncspot_](https://github.com/hrkfdn/ncspot) est un client ncurse pour Spotify écrit en Rust et hautement inspiré des clients ncmpc ou ncmpcpp pour MPD. 
 
 ## Installation
 
@@ -41,10 +41,11 @@ Il suffit alors de lancer la commande `ncspot` et l'on peut alors naviguer entre
 
 Pour en savoir plus, il suffit d'accéder à l'écran d'aide avec la touche `?`.
 
+La configuration se fait dans le fichier `~/.config/ncspot/config.toml`.
 
 ## Scrobbling
 
-Si l'on souhaite scrobbler ce que l'on écoute avec _ncspot_, il convient d'installer _rescrobbled_&nbsp;:
+Si l'on souhaite scrobbler ce que l'on écoute avec _ncspot_, il convient d'installer [_rescrobbled_](https://github.com/InputUsername/rescrobbled), écrit lui aussi en Rust&nbsp;:
 
 ```shell
 wget https://github.com/InputUsername/rescrobbled/releases/download/v0.2.0/rescrobbled
