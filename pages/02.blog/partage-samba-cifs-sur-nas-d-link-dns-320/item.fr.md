@@ -5,8 +5,8 @@ taxonomy:
     category:
         - Linux
     tag:
-        - NAS
         - 'Raspberry Pi'
+        - NAS
         - réseau
 twitterenable: true
 twittercardoptions: summary
@@ -29,13 +29,13 @@ password=PASSWORD
 On fait en sorte que seul le propriétaire de ce fichier puisse le lire et l'écrire&nbsp;:
 
 ```shell
-$ chmod 600 ~/.nascredentials
+chmod 600 ~/.nascredentials
 ```
 
 On crée des points de montage pour les partages du NAS&nbsp;:
 
 ```shell
-$ mkdir ~/NAS ~/NAS_DOWN
+mkdir ~/NAS ~/NAS_DOWN
 ```
 
 Enfin, on édite le fichier `/etc/fstab` (en spécifiant bien l'emplacement du fichier `.nascredentials`)&nbsp;:
@@ -48,11 +48,11 @@ Enfin, on édite le fichier `/etc/fstab` (en spécifiant bien l'emplacement du f
 Puis on monte nos partitions&nbsp;:
 
 ```shell
-$ sudo mount -a
+sudo mount -a
 ```
 
 Par contre, il est sans doute nécessaire d'installer le paquet `cifs-utils`&nbsp;:
 
 ```shell
-$ sudo apt install cifs-utils
+sudo apt install cifs-utils
 ```
