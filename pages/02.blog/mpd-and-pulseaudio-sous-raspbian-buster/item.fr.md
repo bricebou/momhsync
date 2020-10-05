@@ -302,6 +302,7 @@ audio_output {
         type            "pulse"
         name            "My Pulse Output"
         server          "localhost"
+        mixer_type      "software"
 }
 ```
 
