@@ -109,3 +109,15 @@ Pour lancer le service en tant que démon, il faut placer le fichier `~/rescrobb
 mkdir -p ~/.config/systemd/user
 cp ~/rescrobbled-0.2.0/rescrobbled.service ~/.config/systemd/user/
 ```
+
+Lancez ensuite la commande suivante pour lancer _rescrobbled_ au démarrage&nbsp;:
+
+```shell
+systemctl --user enable rescrobbled.service
+```
+
+et pour le lancer sans avoir à redémarrer&nbsp;:
+
+```shell
+systemctl --user start rescrobbled.service
+```
