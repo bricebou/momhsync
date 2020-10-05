@@ -5,9 +5,9 @@ taxonomy:
     category:
         - Linux
     tag:
+        - 'Raspberry Pi'
         - console
         - encodage
-        - 'Raspberry Pi'
         - sous-titres
 twitterenable: true
 twittercardoptions: summary
@@ -23,13 +23,13 @@ Du coup, grâce à deux contributions d'une même conversation (celles de [Pierr
 Si ce n'est pas déjà fait, on crée un répertoire `bin/` dans notre `home`&nbsp;:
 
 ```bash
-$ mkdir ~/bin
+mkdir ~/bin
 ```
 
 puis on y crée notre script&nbsp;:
 
 ```bash
-$ nano ~/bin/toutf8
+nano ~/bin/toutf8
 ```
 
 dans lequel on insère&nbsp;:
@@ -52,17 +52,17 @@ fi
 On le rend exécutable&nbsp;:
 
 ```bash
-$ chmod +x ~/bin/toutf8
+chmod +x ~/bin/toutf8
 ```
 
 Pour le faire fonctionner, il convient bien d'avoir installé les paquets `uchardet` (plus fiable que la commande `file -i` qui renvoie régulièrement des `unknown-8bit` impossible à passer en argument de `recode` ou à traiter par ce script) et bien sûr `vim`&nbsp;:
 
 ```bash
-$ sudo apt install uchardet vim
+sudo apt install uchardet vim
 ```
 
 Ensuite, où que vous vous trouviez, vous pourrez appeler le script simplement&nbsp;:
 
 ```bash
-$ toutf8 nom_du_fichier
+toutf8 nom_du_fichier
 ```
