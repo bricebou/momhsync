@@ -101,6 +101,7 @@ Discovery stopped
 [Tangent Ampster BT]# exit
 ```
 
+<!--
 
 Pour la configuration de MPD, il est nécessaire d'identifier alors les sorties disponibles grâce à la commande suivante&nbsp;:
 
@@ -287,6 +288,19 @@ audio_output {
         server          "127.0.0.1"            
         sink            "alsa_output.platform-bcm2835_audio.analog-mono"     
         mixer_type      "software"
+}
+```
+-->
+
+On configure une sortie PulseAudio dans la configuration de mpd, `/etc/mpd.conf`&nbsp;:
+
+```shell
+sudo nano /etc/mpd.conf
+```
+audio_output {
+        type            "pulse"
+        name            "My Pulse Output"
+        server          "localhost"
 }
 ```
 
