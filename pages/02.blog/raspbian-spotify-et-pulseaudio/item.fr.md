@@ -7,8 +7,8 @@ taxonomy:
         - Linux
     tag:
         - 'Raspberry Pi'
-        - PulseAudio
         - Spotify
+        - PulseAudio
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
@@ -60,7 +60,7 @@ sudo service raspotify restart
 
 ## Raspotify & PulseAudio
 
-Pour que Raspotify utiliser PulseAudio, il suffit de suivre [la démarche proposée par Marc Fauvain ](https://github.com/dtcooper/raspotify/issues/154#issuecomment-442299432)&nbsp;:
+Pour que Raspotify utilise PulseAudio, il suffit de suivre [la démarche proposée par Marc Fauvain ](https://github.com/dtcooper/raspotify/issues/154#issuecomment-442299432)&nbsp;:
 
 ```shell
 cd /var/cache/raspotify
