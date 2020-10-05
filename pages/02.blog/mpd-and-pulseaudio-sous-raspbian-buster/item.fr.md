@@ -22,13 +22,13 @@ Alors que je venais juste de mettre en place la cohabitation entre MPD et mon am
 On commence par purger `bluealsa` s'il est installé&nbsp;:
 
 ```shell
-$ sudo apt purge bluealsa
+sudo apt purge bluealsa
 ```
 
 puis on installe tout ce qui concerne le Bluetooth et PulseAudio&nbsp;:
 
 ```shell
- $ sudo apt install pi-bluetooth pulseaudio pulseaudio-module-bluetooth paprefs pavumeter pavucontrol pasystray
+ sudo apt install pi-bluetooth pulseaudio pulseaudio-module-bluetooth paprefs pavumeter pavucontrol pasystray
  ```
 
 On vérifie la configuration de PulseAudio (`/etc/pulse/default.pa`) notamment pour ce qui est du Bluetooth&nbsp;:
@@ -56,19 +56,19 @@ load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 # IP of localhost
 On tue PulseAudio&nbsp;:
 
 ```shell
-$ pulseaudio -k
+pulseaudio -k
 ```
 
 S'il ne redémarre pas tout seul, il suffit de lancer la commande&nbsp;:
 
 ```shell
-$ pulseaudio -D
+pulseaudio -D
 ```
 
 On veille à bien connecter notre enceinte Bluetooth via l'utilitaire en ligne de commande `bluetoothctl`&nbsp;: on commence par rechercher les périphériques disponibles (`scan on`), puis on lui accorde notre confiance (pas d'authentification nécessaire, `trust`) avant de faire l'appairage avec le bon device (`pair`) et de nous y connecter (`connect`)&bvsp;; on peut alors cesser la recherche (`scan off`)&nbsp;:
 
 ```shell
-$ bluetoothctl 
+bluetoothctl 
 Agent registered
 [bluetooth]# scan on
 Discovery started
@@ -102,8 +102,11 @@ Discovery stopped
 
 Pour la configuration de MPD, il est nécessaire d'identifier alors les sorties disponibles grâce à la commande suivante&nbsp;:
 
-```bash
-$ pacmd list-sinks
+```shell
+pacmd list-sinks
+```
+
+```shell
 3 sink(s) available.
     index: 0
 	name: <alsa_output.platform-bcm2835_audio.analog-mono>
@@ -265,7 +268,7 @@ $ pacmd list-sinks
 De là, on peut configurer les sorties dans MPD&nbsp;:
 
 ```shell
-$ sudo nano /etc/mpd.conf
+sudo nano /etc/mpd.conf
 ```
 
 ```
@@ -288,5 +291,5 @@ audio_output {
 On relance MPD et l'affaire est jouée&nbsp;:
 
 ```shell
-$ sudo service mpd restart
+sudo service mpd restart
 ```
