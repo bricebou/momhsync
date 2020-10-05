@@ -17,7 +17,7 @@ Afin de pouvoir accéder à certains sites tels [EZTV](https://eztv.io/) ou [YTS
 Sous Raspbian Buster, il faut éditer le fichier `/etc/dhcpcd.conf`&nbsp;:
 
 ```bash
-$ sudo nano /etc/dhcpcd.conf
+sudo nano /etc/dhcpcd.conf
 ```
 
 et décommenter la ligne 
@@ -35,11 +35,11 @@ static domain_name_servers=80.67.169.12 80.67.169.40 2001:910:800::12 2001:910:8
 Une fois le fichier enregistré, il faut relancer le service `dhcpcd`
 
 ```bash
-$ sudo service dhcpcd restart
+sudo service dhcpcd restart
 ```
 
 Pour vérifier que nos modifications ont bien été prises en compte, on peut regarder les serveurs affichés dans le fichier `/etc/resolv.conf`&nbsp;:
 
 ```bash
-$ cat /etc/resolv.conf
+cat /etc/resolv.conf
 ```
