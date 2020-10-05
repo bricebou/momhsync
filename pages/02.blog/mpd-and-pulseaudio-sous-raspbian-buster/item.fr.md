@@ -297,6 +297,7 @@ On configure une sortie PulseAudio dans la configuration de mpd, `/etc/mpd.conf`
 ```shell
 sudo nano /etc/mpd.conf
 ```
+```
 audio_output {
         type            "pulse"
         name            "My Pulse Output"
