@@ -23,21 +23,21 @@ La solution la plus simple à mettre en œuvre, sous réserve que vous ayiez opt
 On commence par récupérer le contenu du script&nbsp;:
 
 ```bash
-$ wget https://gist.githubusercontent.com/ruario/19a28d98d29d34ec9b184c42e5f8bf29/raw/6ff95fa30a291319700b5a75dd558038d3e202c5/widevine-flash_armhf.sh
+wget https://gist.githubusercontent.com/ruario/19a28d98d29d34ec9b184c42e5f8bf29/raw/6ff95fa30a291319700b5a75dd558038d3e202c5/widevine-flash_armhf.sh
 ```
 
 On le rend exécutable et on le lance&nbsp;:
 
 ```bash
-$ chmod +x widevine-flash_armhf.sh && ./widevine-flash_armhf.sh
+chmod +x widevine-flash_armhf.sh && ./widevine-flash_armhf.sh
 ```
 
 avant de suivre les instructions fournies&nbsp;:
 
 ```bash
-$ sudo tar Cfx / widevine-flash-20200124_armhf.tgz
-$ mkdir -p ~/.config/vivaldi{,-snapshot}/WidevineCdm
-$ echo '{"Path":"/opt/WidevineCdm"}' | tee ~/.config/vivaldi/WidevineCdm/latest-component-updated-widevine-cdm > ~/.config/vivaldi-snapshot/WidevineCdm/latest-component-updated-widevine-cdm
+sudo tar Cfx / widevine-flash-20200124_armhf.tgz
+mkdir -p ~/.config/vivaldi{,-snapshot}/WidevineCdm
+echo '{"Path":"/opt/WidevineCdm"}' | tee ~/.config/vivaldi/WidevineCdm/latest-component-updated-widevine-cdm > ~/.config/vivaldi-snapshot/WidevineCdm/latest-component-updated-widevine-cdm
 ```
 
 
