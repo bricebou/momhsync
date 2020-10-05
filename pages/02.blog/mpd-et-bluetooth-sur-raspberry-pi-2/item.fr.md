@@ -28,7 +28,7 @@ sudo apt install pi-bluetooth
 Pour connecter l'ampli au Raspberry Pi, on utilise l'utilitaire en ligne de commande `bluetoothctl`&nbsp;: on commence par rechercher les périphériques disponibles (`scan on`), puis on fait l'appairage avec le bon device (`pair`) et on lui accorde notre confiance (pas d'authentification nécessaire, `trust`) avant de nous y connecter (`connect`) et de cesser la recherche (`scan off`)&nbsp;:
 
 ```shell
-$ bluetoothctl 
+bluetoothctl 
 Agent registered
 [bluetooth]# scan on
 Discovery started
@@ -62,7 +62,7 @@ Discovery stopped
 Cependant, si à l'étape de la connexion à l'ampli, vous obtenez une erreur, il convient alors d'installer le paquet _pulseaudio-module-bluetooth_ &nbsp;:
 
 ```shell
-$ sudo apt install pulseaudio-module-bluetooth
+sudo apt install pulseaudio-module-bluetooth
 ```
 
 Ouvez ensuite le fichier `/etc/pulse/default.pa` et vérifiez aux alentours des lignes 65-67 que vous avez bien&nbsp;:
@@ -87,7 +87,7 @@ Lancez alors `pulseaudio` avec la commande `pulseaudio -D` après l'avoir tué s
 Une nouvelle fois, je ne suis pas parvenu à configurer MPD pour qu'il utilise PulseAudio... On s'en tient donc à ALSA et au «&nbsp;Bluetooth Audio ALSA Backend&nbsp;» _bluealsa_ que l'on commence par installer&nbsp;:
 
 ```shell
-$ sudo apt install bluealsa
+sudo apt install bluealsa
 ```
 
 Puis on «&nbsp;crée&nbsp;» de nouveaux périphériques audio pour l'ensemble du système et de ses utilisateurs&nbsp;:
@@ -149,5 +149,5 @@ audio_output {
 Et on relance le service&nbsp;:
 
 ```shell
-$ sudo service mpd restart
+sudo service mpd restart
 ```
