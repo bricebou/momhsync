@@ -5,9 +5,9 @@ taxonomy:
     category:
         - Linux
     tag:
+        - 'Raspberry Pi'
         - torrent
         - console
-        - 'Raspberry Pi'
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
@@ -26,7 +26,7 @@ sudo pip3 install git+https://github.com/bricebou/yify
 Nous avons désormais accès à la commande `yify` qui renvoie les dernières sorties&nbsp;:
 
 ```bash
-$ yify
+yify
 16500 Ordinary Love
 16499 Jimmy P.
 16497 American Masters Jimi Hendrix: Hear My Train a Comin'
@@ -52,7 +52,7 @@ $ yify
 Pour avoir plus d'informations sur un film&nbsp;:
 
 ```bash
-$ yify -id 16497 --details
+yify -id 16497 --details
 title : American Masters Jimi Hendrix: Hear My Train a Comin' (2013)
 year : 2013
 rating : 7.7
@@ -69,24 +69,24 @@ imdb_id : tt3181314
 Pour télécharger le torrent ou le magnet (lien copié dans un fichier)&nbsp;:
 
 ```bash
-$ yify -id 16497 --torrent
-$ yify -id 16497 --magnet
+yify -id 16497 --torrent
+yify -id 16497 --magnet
 ```
 
 Ensuite, si vous utiliser transmission-daemon accompagné de transmission-remote, il vous suffit de fournir à ce dernier le fichier .torrent&nbsp;:
 
 ```bash
-$ transmission-remote 192.168.1.21:8091 -a 16497.torrent
+transmission-remote 192.168.1.21:8091 -a 16497.torrent
 ```
 
 ou le contenu du fichier .magnet&nbsp;:
 
 ```bash
-$ transmission-remote 192.168.1.21:8091 -a `cat 16497.magnet`
+transmission-remote 192.168.1.21:8091 -a `cat 16497.magnet`
 ```
 
 ou&nbsp;:
 
 ```bash
-$ cat 16497.magnet | xargs transmission-remote 192.168.1.21:8091 -a 
+cat 16497.magnet | xargs transmission-remote 192.168.1.21:8091 -a 
 ```
