@@ -15,10 +15,10 @@ facebookenable: true
 Afin de faciliter l'écoute de certaines radio en streaming, et surtout sans utiliser un navigateur web, de plus en plus gourmand en ressources, j'utilise désormais un petit script bash qui utilise `mplayer`.
 
 ```bash
-$ mkdir /home/$USER/bin
-$ touch /home/$USER/bin/radio
-$ chmod +x /home/$USER/bin/radio
-$ nano /home/$USER/bin/radio
+mkdir /home/$USER/bin
+touch /home/$USER/bin/radio
+chmod +x /home/$USER/bin/radio
+nano /home/$USER/bin/radio
 ```
 
 ```bash
@@ -56,7 +56,7 @@ esac
 Ensuite, il suffit de choisir sa radio et de lancer la commande suivante (par exemple)&nbsp;:
 
 ```bash
-$ radio culture
+radio culture
 ```
 
 ### Auto-complétion des stations
@@ -64,7 +64,7 @@ $ radio culture
 On crée le fichier `radio-completion.bash`&nbsp;:
 
 ```bash
-$ nano /home/$USER/bin/radio-completion.bash
+nano /home/$USER/bin/radio-completion.bash
 ```
 
 dans lequel on colle les deux lignes suivantes&nbsp;:
@@ -77,7 +77,7 @@ complete -W "beaub culture info inter" radio
 lancez la commande suivante&nbsp;:
 
 ```bash
-$ source /home/$USER/bin/radio-completion.bash
+source /home/$USER/bin/radio-completion.bash
 ```
 
 Et vous devriez avoir les stations qui vous sont proposées lorsque vous pressez la touche `Tab` à la suite de la commande `radio` et au fur et à mesure de votre saisie.
