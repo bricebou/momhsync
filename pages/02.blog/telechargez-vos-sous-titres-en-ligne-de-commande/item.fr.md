@@ -5,8 +5,8 @@ taxonomy:
     category:
         - Linux
     tag:
-        - console
         - 'Raspberry Pi'
+        - console
         - sous-titres
 twitterenable: true
 twittercardoptions: summary
@@ -21,25 +21,25 @@ Celle qui avait notre préférence, addic7ed-cli de Benoit Zugmeyer, disponible 
 Pour installer [addic7ed-cli](https://github.com/BenoitZugmeyer/addic7ed-cli), le plus simple reste de commencer par installer l'utilitaire Pip ainsi que la librairie _libxslt-dev_&nbsp;:
 
 ```bash
-$ sudo apt install python3-pip libxslt-dev
+sudo apt install python3-pip libxslt-dev
 ```
 
 Une fois cela fait, lancez la commande&nbsp;:
 
 ```bash
-$ sudo pip3 install https://github.com/BenoitZugmeyer/addic7ed-cli/archive/master.zip
+sudo pip3 install https://github.com/BenoitZugmeyer/addic7ed-cli/archive/master.zip
 ```
 
 Vous pouvez dès lors utilisez cet utilitaire avec la commande `addic7ed`&nbsp;:
 
 ```bash
-$ addic7ed -l french The.Walking.Dead.S05E01.720p.HDTV.x264-KILLERS.mkv
+addic7ed -l french The.Walking.Dead.S05E01.720p.HDTV.x264-KILLERS.mkv
 ```
 
 Pour en savoir plus&nbsp;:
 
 ```bash
-$ addic7ed --help
+addic7ed --help
 ```
 
 ## subdl
@@ -49,18 +49,18 @@ Pour télécharger des sous-titres depuis [opensubtitles.org](http://www.opensub
 Pour l'installer&nbsp;:
 
 ```bash
-$ sudo pip3 install git+https://github.com/alexanderwink/subdl
+sudo pip3 install git+https://github.com/alexanderwink/subdl
 ```
 
 La commande `subdl` est dès lors disponible&nbsp;:
 ```bash
-$ subdl -h
+subdl -h
 ```
 
 Personnellement, je me suis créé un alias Bash avec identification auprès d'opensubtitles.org et l'argument de la langue notamment&nbsp;:
 
 ```bash
-$ nano ~/.bash_alias
+nano ~/.bash_alias
 ```
 
 ```bash
@@ -81,7 +81,7 @@ sudo pip3 install subliminal
 Par contre, cette version est désormais particulièrement ancienne&nbsp;; en cas de besoin, on peut se reporter sur la version de développement (non testée)&nbsp;:
 
 ```bash
-$ sudo pip3 install git+https://github.com/Diaoul/subliminal@develop
+sudo pip3 install git+https://github.com/Diaoul/subliminal@develop
 ```
 -->
 
@@ -95,7 +95,7 @@ L'on peut aussi spécifier les "providers" auxquels on souhaite limiter la reche
 Je me suis donc créé un alias afin de m'en faciliter l'usage&nbsp;:
 
 ```bash
-$ nano ~/.bash_alias
+nano ~/.bash_alias
 ```
 
 ```bash
@@ -109,13 +109,13 @@ Si comme moi vous êtes un utilisateur régulier de [YIFY / YTS](https://yts.mx/
 Pour cela, on peut utiliser le module pour NodeJS [_getsubtitle_](https://www.npmjs.com/package/getsubtitle)&nbsp;:
 
 ```bash
-$ sudo npm install -g getsubtitle
+sudo npm install -g getsubtitle
 ```
 
 L'idéal dans son utilisation est de lui fournir l'identifiant IMDB du film dont on recherche les sous-titres, par exemple&nbsp;:
 
 ```bash
-$ getsubtitle tt0054756
+getsubtitle tt0054756
 ```
 
 Pour connaître cet identifiant IMDB, il convient d'utiliser [le petit utilitaire yify](/blog/yify_yts_command_line), que j'ai forké justement pour récupérer cette donnée.
