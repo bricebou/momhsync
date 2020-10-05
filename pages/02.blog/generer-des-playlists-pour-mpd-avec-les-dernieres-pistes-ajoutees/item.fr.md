@@ -15,7 +15,7 @@ facebookenable: true
 Afin de retrouver facilement dans [ncmpcpp](/blog/ncmpcpp) les dernières pistes ajoutées à ma bibliothèque, j'ai trouvé et adapté le script suivant.
 
 ```shell
-$ nano ~/bin/lastaddedmpd
+nano ~/bin/lastaddedmpd
 ```
 
 ```bash
@@ -26,7 +26,7 @@ find . -type f -ctime -1 | egrep '\.mp3$|\.flac$' | awk '{ sub(/^\.\//, ""); pri
 ```
 
 ```shell
-$ chmod +x ~/bin/lastaddedmpd
+chmod +x ~/bin/lastaddedmpd
 ```
 
 Et on lance la commande `lastaddedmpd` avec pour argument le nombre de jours à prendre en compte.
