@@ -13,7 +13,7 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
-Si mes recherches pour utiliser Spotify depuis mon Raspverry Pi sous Raspbian Buster m'ont tout d'abord conduit à [la prise en charge des DRM pour utiliser le client web open.spotify.com](blog/gestion-des-drm-sous-raspbian-buster) puis [au client Spotify Connect _raspotify_](blog/raspbian-spotify-et-pulseaudio), j'ai enfin découvert un client Spotify ne nécessitant pas de serveur X&nbsp;: [_ncspot_](https://github.com/hrkfdn/ncspot) est ainsi un client ncurse pour Spotify écrit en Rust et hautement inspiré des clients ncmpc ou ncmpcpp pour MPD. 
+Si mes recherches pour utiliser Spotify depuis mon Raspverry Pi sous Raspbian Buster m'ont tout d'abord conduit à [la prise en charge des DRM pour utiliser le client web open.spotify.com](/blog/gestion-des-drm-sous-raspbian-buster) puis [au client Spotify Connect _raspotify_](/blog/raspbian-spotify-et-pulseaudio), j'ai enfin découvert un client Spotify ne nécessitant pas de serveur X&nbsp;: [_ncspot_](https://github.com/hrkfdn/ncspot) est ainsi un client ncurse pour Spotify écrit en Rust et hautement inspiré des clients ncmpc ou ncmpcpp pour MPD. 
 
 ## Installation
 
