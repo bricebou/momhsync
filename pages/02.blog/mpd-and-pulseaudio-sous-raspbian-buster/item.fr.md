@@ -65,10 +65,12 @@ S'il ne redémarre pas tout seul, il suffit de lancer la commande&nbsp;:
 pulseaudio -D
 ```
 
-On veille à bien connecter notre enceinte Bluetooth via l'utilitaire en ligne de commande `bluetoothctl`&nbsp;: on commence par rechercher les périphériques disponibles (`scan on`), puis on lui accorde notre confiance (pas d'authentification nécessaire, `trust`) avant de faire l'appairage avec le bon device (`pair`) et de nous y connecter (`connect`)&bvsp;; on peut alors cesser la recherche (`scan off`)&nbsp;:
+On veille à bien connecter notre enceinte Bluetooth via l'utilitaire en ligne de commande `bluetoothctl`&nbsp;: on commence par rechercher les périphériques disponibles (`scan on`), puis on lui accorde notre confiance (pas d'authentification nécessaire, `trust`) avant de faire l'appairage avec le bon device (`pair`) et de nous y connecter (`connect`)&nbsp;; on peut alors cesser la recherche (`scan off`)&nbsp;:
 
 ```shell
 bluetoothctl 
+```
+```shell
 Agent registered
 [bluetooth]# scan on
 Discovery started
