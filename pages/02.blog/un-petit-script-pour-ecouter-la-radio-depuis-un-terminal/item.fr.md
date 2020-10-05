@@ -5,8 +5,8 @@ taxonomy:
     category:
         - Linux
     tag:
-        - console
         - bash
+        - console
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
@@ -29,25 +29,25 @@ usage ()
     echo '*****************************************************'
     echo '******************** Radio **************************'
     echo '*****************************************************'
-    echo '  - beaub    &nbsp;: BeaubFM, radio associative de Limoges'
-    echo '  - culture  &nbsp;: France Culture'
-    echo '  - info     &nbsp;: France Info'
-    echo '  - inter    &nbsp;: France Inter'
+    echo '  - beaub    : BeaubFM, radio associative de Limoges'
+    echo '  - culture   : France Culture'
+    echo '  - info        : France Info'
+    echo '  - inter       : France Inter'
     echo '*****************************************************'
 }
 
 case $1 in
     beaub )         mplayer http://beaubfm2.ice.infomaniak.ch/beaubfm2-96.mp3
-                   &nbsp;;;
+                   ;;
     culture )       mplayer http://direct.franceculture.fr/live/franceculture-midfi.mp3
-                   &nbsp;;;
+                   ;;
     info )          mplayer http://direct.franceinfo.fr/live/franceinfo-midfi.mp3
-                   &nbsp;;;
+                   ;;
     inter )         mplayer http://direct.franceinter.fr/live/franceinter-midfi.mp3
-                   &nbsp;;;
+                   ;;
     -h | --help )   usage
                     exit
-                   &nbsp;;;
+                   ;;
     * )             usage
                     exit 1
 esac
