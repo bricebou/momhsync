@@ -23,18 +23,18 @@ L'installation de Transmission ne peut se faire par le biais de _slacker_, l'out
 Il faut commencer par [installer _Optware_](https://nas-tweaks.net/219/installation-of-optware-on-the-d-link-dns-320-dns-325-dns-343-and-conceptronic-ch3mnas/), qui fournit de nombreux logiciels&nbsp;:
 
 ```shell
-$ wget http://wolf-u.li/u/233 -O /ffp/start/optware.sh
-$ chmod a+x /ffp/start/optware.sh
-$ /ffp/start/optware.sh start
+wget http://wolf-u.li/u/233 -O /ffp/start/optware.sh
+chmod a+x /ffp/start/optware.sh
+/ffp/start/optware.sh start
 ```
 
 L'on dispose alors de la commande `ipkg`&nbsp;
 
 ```shell
-# ipkg update
-# ipkg list
-# ipkg list transmission
-# ipkg install transmission
+ipkg update
+ipkg list
+ipkg list transmission
+ipkg install transmission
 ```
 
 ## Préparation
@@ -42,20 +42,20 @@ L'on dispose alors de la commande `ipkg`&nbsp;
 On commence par créer les répertoires de téléchargement et de configuration&nbp;:
 
 ```shell
-# mkdir -p /mnt/HD/HD_b2/torrent/{.transmission,complete,incomplete}
+mkdir -p /mnt/HD/HD_b2/torrent/{.transmission,complete,incomplete}
 ```
 
 Ensuite, pour bénéficier du script de lancement de transmission-daemon, nous installons puis désinstallons dans la foulée via slacker le paquet transmission&nbsp;:
 
 ```shell
-# slacker -a transmission
-# slacker -r transmission
+slacker -a transmission
+slacker -r transmission
 ```
 
 Puis on édite le fichier `/ffp/start/transmission.sh` en modifiant les chemins des exécutables (qui se trouvent dans `/opt/bin`) et des fichiers de configuration de Transmission&nbsp;:
 
 ```shell
-# nano /ffp/start/transmission.sh 
+nano /ffp/start/transmission.sh 
 ```
 
 Voici mon script&nbsp;:
@@ -108,7 +108,7 @@ run_rc_command "$1"
 On le rend exécutable&nbsp;:
 
 ```shell
-# chmod a+x /ffp/start/transmission.sh
+chmod a+x /ffp/start/transmission.sh
 ```
 
 ## Premier lancement
@@ -120,18 +120,18 @@ Afin de générer le fichier de configuration, il convient de lancer une premiè
 - `-T`&nbsp;: je n'ai pas besoin d'authentification puisque je me limite à mon réseau local (option `-a`).
 
 ```shell
-# /opt/bin/transmission-daemon -f -g /mnt/HD/HD_b2/torrent/.transmission -w /mnt/HD/HD_b2/torrent/complete -T -a 127.0.0.1,192.168.1.*
+/opt/bin/transmission-daemon -f -g /mnt/HD/HD_b2/torrent/.transmission -w /mnt/HD/HD_b2/torrent/complete -T -a 127.0.0.1,192.168.1.*
 ```
 On peut interrompre le daemon (Ctrl+C) puis éditer le fichier de configuration qui a été créé&nbsp;:
 
 ```shell
-# nano /mnt/HD/HD_b2/torrent/.transmission/settings.json 
+nano /mnt/HD/HD_b2/torrent/.transmission/settings.json 
 ```
 
 Ensuite, on peut lancer Transmission simplement avec&nbsp;:
 
 ```shell
-# /ffp/start/transmission.sh
+/ffp/start/transmission.sh
 ```
 
 **Références&nbsp;:**
