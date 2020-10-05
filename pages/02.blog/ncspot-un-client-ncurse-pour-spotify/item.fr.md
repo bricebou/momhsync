@@ -80,7 +80,7 @@ cmdline_bg = "light black"
 Si l'on souhaite scrobbler ce que l'on écoute avec _ncspot_, il convient d'installer [_rescrobbled_](https://github.com/InputUsername/rescrobbled), écrit lui aussi en Rust&nbsp;:
 
 ```shell
-wget https://github.com/InputUsername/rescrobbled/releases/download/v0.2.0/rescrobbled
+wget https://github.com/InputUsername/rescrobbled/archive/v0.2.0.tar.gz
 tar xvzf v0.2.0
 cd rescrobbled-0.2.0/
 cargo install --path .
