@@ -25,22 +25,22 @@ Dans le cadre de la «digitalisation» de [_La Sculpture : les Pluies_](http://p
 Cependant, le pilote pour les stations Netatmo ([https://github.com/matthewwall/weewx-netatmo](https://github.com/matthewwall/weewx-netatmo)) n'est pas compatible avec la version 4 de WeeWX... On bascule donc sur la dernière des versions 3 de WeeWX disponibles, la 3.9.2&nbsp;:
 
 ```bash
-$ wget http://weewx.com/downloads/released_versions/weewx-3.9.2.tar.gz
+wget http://weewx.com/downloads/released_versions/weewx-3.9.2.tar.gz
 ```
 
 On installe les dépendances nécessaires :
 
 ```bash
-$ sudo apt install python-configobj python-pil python-serial python-usb python-pip python-cheetah python-ephem mariadb-client python-mysqldb
+sudo apt install python-configobj python-pil python-serial python-usb python-pip python-cheetah python-ephem mariadb-client python-mysqldb
 ```
 
 Puis on lance l'installation :
 
 ```bash
-$ tar xvfz weewx-3.9.2.tar.gz
-$ cd weewx-3.9.2
-$ python2 setup.py build
-$ sudo python setup.py install
+tar xvfz weewx-3.9.2.tar.gz
+cd weewx-3.9.2
+python2 setup.py build
+sudo python setup.py install
 ```
 
 L'ensemble des exécutables se trouve dans `/home/weewx/bin/` ; le fichier de configuration est à l'emplacement `/home/weewx/weewx.conf`
@@ -49,20 +49,20 @@ L'ensemble des exécutables se trouve dans `/home/weewx/bin/` ; le fichier de co
 On installe ensuite le pilote weewx-netatmo (https://github.com/matthewwall/weewx-netatmo)&nbsp;:
 
 ```bash
-$ wget -O weewx-netatmo.zip https://github.com/matthewwall/weewx-netatmo/archive/master.zip
-$ sudo /home/weewx/bin/wee_extension --install weewx-netatmo.zip
+wget -O weewx-netatmo.zip https://github.com/matthewwall/weewx-netatmo/archive/master.zip
+sudo /home/weewx/bin/wee_extension --install weewx-netatmo.zip
 ```
 
 Puis on configure weewx :
 
 ```bash
-$ sudo /home/weewx/bin/wee_config --reconfigure
+sudo /home/weewx/bin/wee_config --reconfigure
 ```
 
 On édite ensuite le fichier de configuration à la main &nbsp;:
 
 ```bash
-$ sudo nano /home/weewx/weewx.conf
+sudo nano /home/weewx/weewx.conf
 ```
 
 On s'assure que nos identifiants Netatmo sont bien pris en compte et on bascule, dans la sous-section `[[wx_binding]]` de la section `[DataBindings]` sur une base de données MySQL&nbsp;:
@@ -81,7 +81,7 @@ On crée une base de données avec les mêmes identifiants que ceux que nous avo
 ```
 
 ```bash
-$ sudo mysql -u root -p
+sudo mysql -u root -p
 ```
 
 ```sql
@@ -94,9 +94,9 @@ MariaDB [(none)]> FLUSH PRIVILEGES;
 Enfin, on fait en sorte que WeeWX soit lancé au démarrage comme un service :
 
 ```bash
-$ cd /home/weewx
-$ sudo cp util/init.d/weewx.debian /etc/init.d/weewx
-$ sudo chmod +x /etc/init.d/weewx
-$ sudo update-rc.d weewx defaults 98
-$ sudo /etc/init.d/weewx start
+cd /home/weewx
+sudo cp util/init.d/weewx.debian /etc/init.d/weewx
+sudo chmod +x /etc/init.d/weewx
+sudo update-rc.d weewx defaults 98
+sudo /etc/init.d/weewx start
 ```
