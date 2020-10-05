@@ -30,9 +30,9 @@ usage ()
     echo '******************** Radio **************************'
     echo '*****************************************************'
     echo '  - beaub    : BeaubFM, radio associative de Limoges'
-    echo '  - culture   : France Culture'
-    echo '  - info        : France Info'
-    echo '  - inter       : France Inter'
+    echo '  - culture  : France Culture'
+    echo '  - info     : France Info'
+    echo '  - inter    : France Inter'
     echo '*****************************************************'
 }
 
