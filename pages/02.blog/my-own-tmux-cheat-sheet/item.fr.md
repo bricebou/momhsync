@@ -54,7 +54,7 @@ Avec cette configuration proposée par  Gregory Pakosz, le préfixe à utiliser 
 Pour envoyer un panneau vers une autre fenêtre, il faut commencer par saisir le raccourci `<prefix> :` et de saisir&nbsp;:
 
 ```
-: join-pane -t :<int>
+join-pane -t :<int>
 ```
 
 
