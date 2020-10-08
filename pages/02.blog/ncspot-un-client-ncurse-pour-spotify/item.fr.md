@@ -81,7 +81,7 @@ Si l'on souhaite scrobbler ce que l'on écoute avec _ncspot_, il convient d'inst
 
 ```shell
 wget https://github.com/InputUsername/rescrobbled/archive/v0.2.0.tar.gz
-tar xvzf v0.2.0
+tar xvzf v0.2.0.tar.gz
 cd rescrobbled-0.2.0/
 cargo install --path .
 ```
