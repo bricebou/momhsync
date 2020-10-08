@@ -45,7 +45,7 @@ Avec cette configuration proposée par  Gregory Pakosz, le préfixe à utiliser 
 `<prefix> x`&nbsp;: détruire le panneau actif    
 
 `<prefix> space`&nbsp;: alterne entre les différentes dispositions de panneaux possibles
-`<prefix> alt+1`&nbsp;: organise les panneaux verticalement
+`<prefix> alt+1`&nbsp;: organise les panneaux verticalement      
 `<prefix> alt+2`&nbsp;: organise les panneaux horizontalement 
 
 `<prefix> m`&nbsp;: (dés)activer le mode souris     
