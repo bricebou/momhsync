@@ -1,5 +1,6 @@
 ---
 title: 'Monter son Google Drive sous Debian Testing'
+media_order: google-drive-ocamlfuse-startup.png
 date: '17-10-2020 09:17'
 twitterenable: true
 twittercardoptions: summary
@@ -51,3 +52,4 @@ Sous Mate, il faut ouvrir le Centre de contrôle depuis le menu `Système` (ou v
 sh -c "google-drive-ocamlfuse ~/GoogleDrive"
 ```
 
+![](google-drive-ocamlfuse-startup.png)
