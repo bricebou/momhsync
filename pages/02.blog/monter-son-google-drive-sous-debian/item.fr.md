@@ -42,3 +42,12 @@ Ensuite, on crée le répertoire où sera monté notre Google Drive et on passe 
 mkdir ~/GoogleDrive
 google-drive-ocamlfuse ~/GoogleDrive
 ```
+
+## Montage à l'ouverture d'une session graphique
+
+Sous Mate, il faut ouvrir le Centre de contrôle depuis le menu `Système` (ou via la commande `mate-control-center`) puis accéder à «&nbsp;Applications au démarrage&nbsp;» et créer une nouvelle entrée avec la commande suivante&nbsp;:
+
+```shell
+sh -c "google-drive-ocamlfuse ~/GoogleDrive"
+```
+
