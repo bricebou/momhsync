@@ -49,7 +49,4 @@ google-drive-ocamlfuse ~/GoogleDrive
 Sous Mate, il faut ouvrir le Centre de contrôle depuis le menu `Système` (ou via la commande `mate-control-center`) puis accéder à «&nbsp;Applications au démarrage&nbsp;» et créer une nouvelle entrée avec la commande suivante&nbsp;:
 
 ```shell
-sh -c "google-drive-ocamlfuse ~/GoogleDrive"
-```
-
-![](google-drive-ocamlfuse-startup.png)
+sh
