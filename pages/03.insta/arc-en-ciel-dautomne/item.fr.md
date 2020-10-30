@@ -9,14 +9,13 @@ taxonomy:
         - arc-en-ciel
         - automne
 content:
-    items:
-        - '@self.children'
-    limit: 5
+    items: '- ''@self.children'''
+    limit: '5'
     order:
         by: date
         dir: desc
-    pagination: true
-    url_taxonomy_filters: true
+    pagination: '1'
+    url_taxonomy_filters: '1'
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
