@@ -7,3 +7,8 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
+- Emmet
+- BracketHighlitgher
+- LaTeXing
+- Latex-cwl
+- LaTeX-Tools
