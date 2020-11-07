@@ -23,9 +23,12 @@ deb http://ppa.launchpad.net/alessandro-strada/ppa/ubuntu focal main
 deb-src http://ppa.launchpad.net/alessandro-strada/ppa/ubuntu focal main 
 ```
 
-Puis on lance la commande&nbsp;:
+(Sous Debian Buster, il est nécessaire de basculer sur les dépôts de la précédentes version LTS d'Ubuntu et donc de remplacer `focal` par `bionic`.)
+
+Puis on récupère la signature du dépôt avant de lancer l'installation&nbsp;:
 
 ```shell
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AD5F235DF639B041
 sudo apt update && sudo apt install -y google-drive-ocamlfuse
 ```
 
