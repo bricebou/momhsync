@@ -47,8 +47,7 @@ ln -s ~/Dropbox/Sublime/User
 ## Langages
 
 - [LaTeX](/blog/sublime-text-and-latex)&nbsp;;
-- [Markdown](/blog/sublime-text-and-markdown)&nbsp;;
-- 
+- [Markdown](/blog/sublime-text-and-markdown).
 
 
 
