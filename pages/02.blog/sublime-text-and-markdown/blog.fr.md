@@ -54,9 +54,11 @@ sudo apt install pandoc
     <content><![CDATA[
 &nbsp;$0
 ]]></content>
-    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>nbsp</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>text.html.markdown,text.html</scope>
 </snippet>
+```
+auquel il est nécessaire d'associer un raccourci clavier&nbsp;:    
+```json
+	{ "keys": ["ctrl+space"], "command": "insert_snippet", "args": { "name": "Packages/User/html-nbsp.sublime-snippet" } },
 ```
