@@ -6,6 +6,8 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
+Il s'agit ici pour moi de conserver une trace de mes usages restreints mais variés de l'éditeur [Sublime Text](https://www.sublimetext.com), notamment les raccourcis claviers modifiés, les packages utilisés, les snippets créés...
+
 ## Synchronisation via Dropbox
 
 La solution retenue pour synchroniser notamment la configuration, les packages installés et leurs paramètres ainsi que les snippets passe par Dropbox, comme présenté [dans la documentation](https://packagecontrol.io/docs/syncing).
@@ -33,3 +35,15 @@ cd ~/.config/sublime-text-3/Packages/
 rm -r User
 ln -s ~/Dropbox/Sublime/User
 ```
+
+## Apparence
+
+
+## Langages
+
+- LaTeX
+- Markdown
+- 
+
+
+
