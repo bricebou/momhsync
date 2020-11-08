@@ -34,7 +34,7 @@ facebookenable: true
 sudo apt install pandoc
 ```
 
-## Snippets
+## Snippets et raccourcis clavier
 
 - guillemets français en HTML&nbsp;:    
 ```xml
@@ -42,23 +42,23 @@ sudo apt install pandoc
     <content><![CDATA[
 «&#8239;${1}&#8239;»$0
 ]]></content>
-    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>og</tabTrigger>
-    <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>text.html.markdown,text.html</scope>
 </snippet>
 ```
-- espace insécable en HTML&nbsp;:      
-```xml
-<snippet>
-    <content><![CDATA[
-&nbsp;$0
-]]></content>
-    <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <scope>text.html.markdown,text.html</scope>
-</snippet>
-```
-auquel il est nécessaire d'associer un raccourci clavier&nbsp;:    
+ou via le raccourci clavier `Alt+"`&nbsp;:
 ```json
-	{ "keys": ["ctrl+space"], "command": "insert_snippet", "args": { "name": "Packages/User/html-nbsp.sublime-snippet" } },
+    { "keys": ["alt+\""], "command": "insert_snippet", "args": {"contents": "«&#8239;${1}&#8239;»$0"}, "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.html.markdown,text.html" }
+        ]
+    },
+```
+- espace insécable en HTML avec le raccourci clavier `Ctrl+Espace`&nbsp;:
+```json
+	{ "keys": ["ctrl+space"], "command": "insert_snippet", "args": {"contents": "&nbsp;$0"}, "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.html.markdown,text.html" }
+        ]
+    },
 ```
