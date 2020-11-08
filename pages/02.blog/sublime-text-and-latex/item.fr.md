@@ -7,6 +7,9 @@ taxonomy:
         - Linux
     tag:
         - 'Sublime Text'
+twitterenable: true
+twittercardoptions: summary
+facebookenable: true
 content:
     items: '@self.children'
     limit: '5'
@@ -15,12 +18,11 @@ content:
         dir: desc
     pagination: '1'
     url_taxonomy_filters: '1'
-twitterenable: true
-twittercardoptions: summary
-facebookenable: true
 ---
 
 ## Packages
+
+- [LaTeXTools](https://github.com/SublimeText/LaTeXTools)
 
 ## Snippets et raccourcis clavier
 
