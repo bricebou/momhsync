@@ -33,3 +33,30 @@ facebookenable: true
 ```shell
 sudo apt install pandoc
 ```
+
+## Snippets
+
+- guillemets français en HTML&nbsp;:    
+```xml
+<snippet>
+    <content><![CDATA[
+«&#8239;${1}&#8239;»$0
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>og</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.html.markdown,text.html</scope>
+</snippet>
+```
+- espace insécable en HTML&nbsp;:      
+```xml
+<snippet>
+    <content><![CDATA[
+&nbsp;$0
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>nbsp</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.html.markdown,text.html</scope>
+</snippet>
+```
