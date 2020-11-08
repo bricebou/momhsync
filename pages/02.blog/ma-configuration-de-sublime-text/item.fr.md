@@ -1,6 +1,5 @@
 ---
 title: 'Ma configuration de Sublime Text '
-published: false
 date: '08-11-2020 11:34'
 twitterenable: true
 twittercardoptions: summary
