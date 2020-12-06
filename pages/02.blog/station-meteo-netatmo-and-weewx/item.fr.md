@@ -7,6 +7,7 @@ taxonomy:
     tag:
         - 'Raspberry Pi'
         - météo
+        - WeeWX
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
