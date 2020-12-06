@@ -23,7 +23,11 @@ content:
 
 Dans le cadre de la «digitalisation» de [_La Sculpture : les Pluies_](http://patrickdubrac.fr/-La-Sculpture-les-Pluies-) de Patrick Dubrac, nous cherchons à aller au-delà de ce que nous avons mis en place avec _Le Calendrier des pluies_, mis à jour mensuellement à partir des données météorologiques quotidiennes. D'où l'idée de développer un prototype associant [une station météo Netatmo](https://www.netatmo.com/fr-fr/weather/weatherstation) à un Raspberry Pi sur lequel serait installé [WeeWX](http://weewx.com/), un petit programme en Python qui permet d'interagir avec de multiples modèles de stations météo, de publier les données sur de multiples sites, de conserver les données dans des bases de données...
 
-Cependant, le pilote pour les stations Netatmo ([https://github.com/matthewwall/weewx-netatmo](https://github.com/matthewwall/weewx-netatmo)) n'est pas compatible avec la version 4 de WeeWX... On bascule donc sur la dernière des versions 3 de WeeWX disponibles, la 3.9.2&nbsp;:
+Cependant, le pilote pour les stations Netatmo ([https://github.com/matthewwall/weewx-netatmo](https://github.com/matthewwall/weewx-netatmo)) n'est pas compatible avec la version 4 de WeeWX... 
+
+[EDIT : depuis, je suis parvenu à rendre compatible le plugin avec les versions 4 de WeeWX tel que présenté [dans cet article](/blog/station-meteo-netatmo-and-weewx-bis)&nbsp;; certains éléments de cet article sont toujours valables, tels ceux consacrés à la base de données.]
+
+On bascule donc sur la dernière des versions 3 de WeeWX disponibles, la 3.9.2&nbsp;:
 
 ```bash
 wget http://weewx.com/downloads/released_versions/weewx-3.9.2.tar.gz
