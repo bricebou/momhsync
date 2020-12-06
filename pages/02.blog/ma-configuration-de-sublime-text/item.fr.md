@@ -1,6 +1,6 @@
 ---
 title: 'Ma configuration de Sublime Text '
-date: '08-11-2020 11:34'
+date: '01-11-2020 11:34'
 taxonomy:
     category:
         - Linux
