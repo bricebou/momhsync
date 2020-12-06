@@ -2,6 +2,9 @@
 title: 'Monter son Google Drive sous Debian Testing'
 media_order: google-drive-ocamlfuse-startup.png
 date: '17-10-2020 09:17'
+taxonomy:
+    category:
+        - Linux
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
