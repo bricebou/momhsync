@@ -7,12 +7,21 @@ taxonomy:
     tag:
         - 'Sublime Text'
         - SSH
+content:
+    items:
+        - '@self.children'
+    limit: 5
+    order:
+        by: date
+        dir: desc
+    pagination: true
+    url_taxonomy_filters: true
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
 ---
 
-Sur le client, on commence par installer via le gestionnaire de paquet le plugin [RemoteSubl](https://github.com/randy3k/RemoteSubl)&nbsp;: <kbd>Ctrl+Shift+p</kbd> > Package Control: Install Package.
+Sur le client, on commence par installer via le gestionnaire de paquet le plugin [RemoteSubl](https://github.com/randy3k/RemoteSubl)&nbsp;: <kbd>Ctrl+Shift+p</kbd> > «&nbsp;Package Control: Install Package.&nbsp;».
 
 Sur le serveur, il faut installer [`rmate`](https://github.com/aurora/rmate)&nbsp;:
 
