@@ -4,6 +4,7 @@ date: '08-11-2020 11:34'
 taxonomy:
     category:
         - Linux
+        - Windows
     tag:
         - 'Sublime Text'
 twitterenable: true
