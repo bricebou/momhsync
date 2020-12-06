@@ -5,6 +5,7 @@ taxonomy:
     category:
         - LaTeX
         - Linux
+        - Windows
     tag:
         - 'Sublime Text'
 twitterenable: true
