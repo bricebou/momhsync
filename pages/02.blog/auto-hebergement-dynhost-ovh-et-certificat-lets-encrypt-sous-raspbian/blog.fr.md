@@ -1,6 +1,21 @@
 ---
 title: 'Auto-hébergement, DynHost OVH et certificat Let''s Encrypt sous Raspbian'
 date: '06-12-2020 08:06'
+taxonomy:
+    category:
+        - Linux
+    tag:
+        - 'Raspberry Pi'
+        - météo
+content:
+    items:
+        - '@self.children'
+    limit: 5
+    order:
+        by: date
+        dir: desc
+    pagination: true
+    url_taxonomy_filters: true
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
