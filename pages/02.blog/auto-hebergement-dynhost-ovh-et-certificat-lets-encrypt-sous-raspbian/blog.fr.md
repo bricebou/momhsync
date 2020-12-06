@@ -6,7 +6,7 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
-Ayant «&nbsp;associé&nbsp;» ma station météo Netatmo à mon Raspberry Pi grâce à WeeWX ([lire ce post]()), je souhaite désormais rendre accessible sur Internet le site web ainsi généré. Je considère ainsi que vous avez déjà un serveur Apache fonctionnel et configuré (même si nous aborderons la création d'un VirtualHost par la suite).
+Ayant «&nbsp;associé&nbsp;» ma station météo Netatmo à mon Raspberry Pi grâce à WeeWX ([lire ce post](/blog/station-meteo-netatmo-and-weewx)), je souhaite désormais rendre accessible sur Internet le site web ainsi généré. Je considère ainsi que vous avez déjà un serveur Apache fonctionnel et configuré (même si nous aborderons la création d'un VirtualHost par la suite).
 
 ## DynHost et mise à jour de l'IP
 
