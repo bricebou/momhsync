@@ -8,14 +8,13 @@ taxonomy:
         - 'Sublime Text'
         - SSH
 content:
-    items:
-        - '@self.children'
-    limit: 5
+    items: '- ''@self.children'''
+    limit: '5'
     order:
         by: date
         dir: desc
-    pagination: true
-    url_taxonomy_filters: true
+    pagination: '1'
+    url_taxonomy_filters: '1'
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
@@ -26,7 +25,7 @@ Sur le client, on commence par installer via le gestionnaire de paquet le plugin
 Sur le serveur, il faut installer [`rmate`](https://github.com/aurora/rmate)&nbsp;:
 
 ```shell
-curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+sudo curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
 sudo chmod +x /usr/local/bin/rmate
 ```
 
