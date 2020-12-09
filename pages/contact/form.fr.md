@@ -43,6 +43,10 @@ form:
             extension: txt
             body: '{% include ''forms/data.txt.twig'' %}'
         email:
+            from: '{{ config.plugins.email.from }}'
+            to:
+                - '{{ config.plugins.email.from }}'
+                - '{{ form.value.email }}'
             subject: '[Site Contact Form] {{ form.value.name|e }}'
             body: '{% include ''forms/data.html.twig'' %}'
         message: 'Votre message à bien été envoyé&nbsp;!'
