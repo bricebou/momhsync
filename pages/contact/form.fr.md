@@ -37,10 +37,10 @@ form:
     buttons:
         submit:
             type: submit
-            value: Submit
+            value: Envoyer
         reset:
             type: reset
-            value: Reset
+            value: Effacer
     process:
         captcha: true
         save:
