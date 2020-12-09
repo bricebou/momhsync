@@ -53,7 +53,7 @@ form:
             to:
                 - '{{ config.plugins.email.to }}'
                 - '{{ form.value.email }}'
-            subject: '[Site Contact Form] {{ form.value.objet|e }}'
+            subject: '[momh.fr] {{ form.value.objet|e }}'
             body: '{% include ''forms/data.html.twig'' %}'
         message: 'Votre message à bien été envoyé&nbsp;!'
         display: message-envoye
