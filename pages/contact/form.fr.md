@@ -17,6 +17,12 @@ form:
             type: email
             validate:
                 required: true
+        objet:
+            label: objet
+            placeholder: Objet
+            type: text
+            validate:
+                required: true
         message:
             label: message
             placeholder: 'Saisissez votre message'
@@ -47,7 +53,7 @@ form:
             to:
                 - '{{ config.plugins.email.to }}'
                 - '{{ form.value.email }}'
-            subject: '[Site Contact Form] {{ form.value.name|e }}'
+            subject: '[Site Contact Form] {{ form.value.objet|e }}'
             body: '{% include ''forms/data.html.twig'' %}'
         message: 'Votre message à bien été envoyé&nbsp;!'
         display: message-envoye
