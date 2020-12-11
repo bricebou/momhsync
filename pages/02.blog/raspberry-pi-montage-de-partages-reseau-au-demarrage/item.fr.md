@@ -1,6 +1,12 @@
 ---
 title: 'Raspberry Pi : montage de partages réseau au démarrage'
 date: '11-12-2020 22:38'
+taxonomy:
+    category:
+        - Linux
+    tag:
+        - 'Raspberry Pi'
+        - réseau
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
