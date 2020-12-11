@@ -12,7 +12,7 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
-Sur mon Raspberry Pi sous Raspbian Buster, mes partages cifs ou nfs n'étaient par montés au démarrage, malgré l'option `_netdev` dans mon `/etc/fstab` et bien que mon Raspberry soit connecté en Ethernet&nbsp;; je devais relancer la commande `sudo mount -a` après chaque démarrage pour accéder aux partages de mon NAS.     
+Sur mon Raspberry Pi sous Raspbian Buster, [mes partages cifs](/blog/partage-samba-cifs-sur-nas-d-link-dns-320) ou nfs n'étaient par montés au démarrage, malgré l'option `_netdev` dans mon `/etc/fstab` et bien que mon Raspberry soit connecté en Ethernet&nbsp;; je devais relancer la commande `sudo mount -a` après chaque démarrage pour accéder aux partages de mon NAS.     
 La raison en est simplement, très schématiquement, que le démarrage se fait sans même attendre que les interfaces réseau soient opérationnelles, et donc le serveur Samba est inaccessible.
 
 La solution est toute simple&nbsp;: faire en sorte que le Raspberry Pi attende d'avoir paramétré le réseau pour finaliser le boot.
