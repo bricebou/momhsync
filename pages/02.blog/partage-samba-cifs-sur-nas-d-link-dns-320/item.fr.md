@@ -56,3 +56,5 @@ Par contre, il est sans doute nécessaire d'installer le paquet `cifs-utils`&nbs
 ```shell
 sudo apt install cifs-utils
 ```
+
+Si vos partages ne sont pas montés automatiquement au démarrage, [consultez cet article](/blog/raspberry-pi-montage-de-partages-reseau-au-demarrage).
