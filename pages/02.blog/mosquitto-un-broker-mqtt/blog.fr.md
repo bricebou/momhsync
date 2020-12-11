@@ -17,9 +17,6 @@ twittercardoptions: summary
 facebookenable: true
 ---
 
-Mosquitto, un <i>broker</i> MQTT
-================================
-
 J'ai découvert le protocole MQTT (Message Queuing Telemetry Transport) lors de l'interfaçage de ma station météo Netatmo et du logiciel WeeWX sur mon Raspberry Pi&nbsp;; il s'agit d'un protocole de messagerie de type publication - abonnement, extrêmement rapide et léger, utilisé notamment dans l'internet des objets. 
 
 Nous allons ici voir comment installer et configurer un _broker_, un agent MQTT, en l'occurrence [Mosquitto](https://mosquitto.org), en nous appuyant très largement sur [l'article «&nbsp;How to setup your own MQTT Broker&nbsp;» de Pat O'Brien](https://obrienlabs.net/how-to-setup-your-own-mqtt-broker/).
