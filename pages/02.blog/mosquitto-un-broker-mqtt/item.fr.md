@@ -2,15 +2,22 @@
 title: 'Mosquitto, un <i>broker</i> MQTT'
 media_order: mosquitto_a.png
 date: '11-12-2020 13:30'
+taxonomy:
+    category:
+        - Linux
+    tag:
+        - 'Raspberry Pi'
+        - WeeWX
+        - MQTT
+        - IoT
 content:
-    items:
-        - '@self.children'
-    limit: 5
+    items: '- ''@self.children'''
+    limit: '5'
     order:
         by: date
         dir: desc
-    pagination: true
-    url_taxonomy_filters: true
+    pagination: '1'
+    url_taxonomy_filters: '1'
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
