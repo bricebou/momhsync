@@ -7,6 +7,7 @@ taxonomy:
     tag:
         - 'Raspberry Pi'
         - réseau
+        - NAS
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
