@@ -36,7 +36,7 @@ _My Own Memory Hole_ utilise un certain nombre de plugins, outre les «&nbsp;cla
 
 J'ai développé le thème `momh` pour _My Own Memory Hole_; disponible sur [GitHub](https://github.com/bricebou/pico_momh), il repose sur les éléments suivants&nbsp;:
 
-- le framework CSS [Spectre](https://picturepan2.github.io/spectre/index.html) (utilisé par la thème par défaut de Grav, Quark)&nbsp;
+- le framework CSS [Spectre](https://picturepan2.github.io/spectre/index.html) (utilisé par le thème par défaut de Grav, Quark)&nbsp;
 - la police [Route 159](http://dotcolon.net/font/route159/) par Sora Sagano&nbsp;;
 - [non jQuery FitText.js](https://github.com/adactio/FitText.js)&nbsp;;
 - ...
