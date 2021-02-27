@@ -86,4 +86,4 @@ myscanner.vendor = Epson
 myscanner.model  = WF2865
 ```
 
-Désormais vous devriez voir votre scanner dans la liste déroulante 
+Désormais vous devriez voir votre scanner dans Imagescan et sane et xsane devrait trouver votre périphérique sans soucis !
