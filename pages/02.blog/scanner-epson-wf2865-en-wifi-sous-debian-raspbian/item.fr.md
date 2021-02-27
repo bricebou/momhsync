@@ -4,6 +4,11 @@ date: '27-02-2021 19:53'
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
+taxonomy:
+    category:
+        - Linux
+    tag:
+        - Epson
 ---
 
 Si l'imprimante de mon multifonction Epson WorkForce WF-2865 connecté en WiFi ne m'a guère posé problème, l'utilisation du scanner a été plus délicate...     
