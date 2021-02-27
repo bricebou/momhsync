@@ -1,10 +1,12 @@
 ---
-title: 'Scanner Epson WF2865 en WiFi sous Debian/Raspbian'
+title: 'Scanner Epson WF-2865 en WiFi sous Debian/Raspbian'
 date: '27-02-2021 19:53'
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
 ---
+
+Si l'imprimante de mon multifonction Epson WorkForce WF-2865 connecté en WiFi ne m'a guère posé problème, l'utilisation du scanner a été plus délicate...     
 
 On commence par installer `sane`&nbsp;:
 
@@ -83,3 +85,5 @@ myscanner.udi    = esci:networkscan://192.168.1.12:1865
 myscanner.vendor = Epson
 myscanner.model  = WF2865
 ```
+
+Désormais vous devriez voir votre scanner dans la liste déroulante 
