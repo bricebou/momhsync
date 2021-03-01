@@ -206,7 +206,7 @@ mosquitto_sub -h DOMAINE -p 8883 --capath /etc/ssl/certs/ -u USER -P PASSWORD -t
 ```
 
 ```shell
-mosquitto_pub -h DOMAINE -p 8883 -u USER -P PASSWORD -t secret/test -m "Test message dans le canal secret"
+mosquitto_pub -h DOMAINE -p 8883 -u USER -P PASSWORD --capath /etc/ssl/certs/ -t secret/test -m "Test message dans le canal secret"
 ```
 
 Nous pouvons désormais utiliser notre agent MQTT avec WeeWX&nbsp;!
