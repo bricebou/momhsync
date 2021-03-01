@@ -51,7 +51,7 @@ Puis commencez par ouvrir deux sessions dans votre terminal (on ne saurait trop 
 
 Il convient de préciser d'emblée que Mosquitto est très regardant sur le formatage de ses fichiers de configuration et qu'il n'accepte pas d'espace en fin de ligne.
 
-On commence par éditer un fichier `/etc/mosquitto/conf.f/conf.d/myconfig.conf`&nbsp;:
+On commence par éditer un fichier `/etc/mosquitto/conf.d/myconfig.conf`&nbsp;:
 
 ```
 persistence false
