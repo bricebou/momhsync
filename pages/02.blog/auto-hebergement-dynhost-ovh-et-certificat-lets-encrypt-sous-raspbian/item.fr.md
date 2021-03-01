@@ -46,6 +46,7 @@ La configuration peut se faire sinon à la main, en éditant le fichier `/etc/dd
 
 ```
 protocol=dyndns2
+use=web, web=checkip.dyndns.com
 server=www.ovh.com
 login=DOMAINE-USER
 password='PASSWORD'
