@@ -1,9 +1,17 @@
 ---
 title: 'WeeWX, MQTT et skin Belchertown'
-date: '01-03-2021 18:17'
+date: '20-12-2020 18:17'
 twitterenable: true
 twittercardoptions: summary
 facebookenable: true
+taxonomy:
+    category:
+        - Linux
+    tag:
+        - 'Raspberry Pi'
+        - WeeWX
+        - MQTT
+        - IoT
 ---
 
 Le [skin Belchertown](https://github.com/poblabs/weewx-belchertown) pour WeeWX proposé par Pat O'Brien est extrêmement complet (et complexe, du moins pour moi) et est particulièrement intéressant pour ses graphiques dynamiques en JavaScript.
